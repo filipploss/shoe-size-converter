@@ -77,7 +77,7 @@ const ShoeSizeCalculator: FC = () => {
           =
           <TextField
             id="result"
-            value={result || ""}
+            value={size && result || ""}
             sx={{ width: "80px" }}
             InputProps={{
               readOnly: true,
