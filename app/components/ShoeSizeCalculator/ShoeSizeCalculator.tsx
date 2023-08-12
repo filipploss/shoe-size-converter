@@ -3,27 +3,27 @@
 import React, { FC, useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import StandardsSelect from "../Select";
+import Select from "../Select";
 import { calculate } from "./formulas";
 import { standards, genders } from "../dictionaries";
-import { IStandard } from "../types";
+import { TStandard, TGender } from "../types";
 
 const ShoeSizeCalculator: FC = () => {
-  const [currentStandard, setCurrentStandard] = useState<IStandard>(
-    standards[0].label.toLowerCase()
+  const [currentStandard, setCurrentStandard] = useState<TStandard>(
+    standards[0]
   );
-  const [expectedStandard, setExpectedStandard] = useState(
-    standards[1].label.toLowerCase()
+  const [expectedStandard, setExpectedStandard] = useState<TStandard>(
+    standards[1]
   );
-  const [gender, setGender] = useState(genders[0].label);
+  const [gender, setGender] = useState<TGender>(genders[0]);
   const [result, setResult] = useState("");
-  const [size, setSize] = useState<null | number>();
+  const [size, setSize] = useState<null | number>(null);
 
   useEffect(() => {
     setResult(
       calculate({
-        currentStandard: currentStandard.toLowerCase(),
-        expectedStandard: expectedStandard.toLowerCase(),
+        currentStandard: currentStandard,
+        expectedStandard: expectedStandard,
         gender,
         size,
       })
@@ -62,15 +62,15 @@ const ShoeSizeCalculator: FC = () => {
               style: { textAlign: "center" },
             }}
           />
-          <StandardsSelect
+          <Select
             type="standardCurrent"
             onChange={setCurrentStandard}
           />
-          <StandardsSelect type="gender" onChange={setGender} />
+          <Select type="gender" onChange={setGender} />
         </Box>
         <Box display="flex" alignItems="center" gap="10px">
           <Box>to</Box>
-          <StandardsSelect
+          <Select
             type="standardExpected"
             onChange={setExpectedStandard}
           />{" "}
@@ -78,9 +78,15 @@ const ShoeSizeCalculator: FC = () => {
           <TextField
             id="result"
             value={result || ""}
-            sx={{ width: "80px", textAlign: "center" }}
+            sx={{ width: "80px" }}
             InputProps={{
               readOnly: true,
+            }}
+            inputProps={{
+              style: {
+                textAlign: "center",
+                fontWeight: 600
+              },
             }}
           />
         </Box>

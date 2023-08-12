@@ -16,6 +16,7 @@ export const calculate = ({
     },
     iso
   );
+  console.log("expectedStandard", expectedStandard);
   console.log("result", result);
 
   if (expectedStandard === "inches") {

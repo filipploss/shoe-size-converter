@@ -5,10 +5,11 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { standards, genders } from "../dictionaries";
+import { TStandard, TGender } from "../types";
 
 type Props = {
   type: "standardCurrent" | "standardExpected" | "gender";
-  onChange?: Dispatch<SetStateAction<string>>;
+  onChange?: Dispatch<SetStateAction<TStandard | TGender>>;
 };
 
 const Select: FC<Props> = ({ onChange, type }) => {
@@ -30,10 +31,7 @@ const Select: FC<Props> = ({ onChange, type }) => {
       }
       autoHighlight
       disableClearable
-      onChange={(e, value) => {
-        console.log("value", value);
-        return onChange(value.label);
-      }}
+      onChange={(e, value) => onChange(value)}
       // getOptionLabel={(option) => {
       //   return option.label;
       // }}
@@ -50,24 +48,36 @@ const Select: FC<Props> = ({ onChange, type }) => {
           srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
           alt=""
         /> */}
-          {option.label}
+          {((type === "gender" || ["cm", "inches"].includes(option)) &&
+            option) ||
+            option.toUpperCase()}
         </Box>
       )}
-      renderInput={(params) => (
-        <TextField
-          {...params}
-          // label="Choose a standard"
-          variant="standard"
-          sx={{ textAlign: "center" }}
-          inputProps={{
-            ...params.inputProps,
-            autoComplete: "new-password",
-            style: {
-              textAlign: "center",
-            }, // disable autocomplete and autofill
-          }}
-        />
-      )}
+      renderInput={(params) => {
+        console.log("params", params);
+        return (
+          <TextField
+            {...params}
+            // label="Choose a standard"
+            variant="standard"
+            sx={{ textAlign: "center" }}
+            inputProps={{
+              ...params.inputProps,
+              autoComplete: "new-password",
+              style: {
+                textAlign: "center",
+                ...(type !== "gender" &&
+                  !(
+                    params.inputProps.value === "cm" ||
+                    params.inputProps.value === "inches"
+                  ) && {
+                    textTransform: "uppercase",
+                  }),
+              },
+            }}
+          />
+        );
+      }}
     />
   );
 };

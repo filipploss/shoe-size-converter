@@ -1,18 +1,18 @@
-import { IStandard, IGender } from "./types";
+import { TStandard, TGender } from "./types";
 
-export const standards: IStandard[] = [
-  { label: "US" },
-  { label: "EU" },
-  { label: "UK" },
-  { label: "AU" },
-  { label: "BR" },
-  { label: "MX" },
-  { label: "cm" },
-  { label: "inches" },
+export const standards: TStandard[] = [
+  "us",
+  "eu",
+  "uk",
+  "au",
+  "br",
+  "mx",
+  "cm",
+  "inches",
 ];
 
-export const genders: IGender[] = [
-  { label: "Men" },
-  { label: "Women" },
-  { label: "Children" },
+export const genders: TGender[] = [
+  "Men",
+  "Women",
+  "Children",
 ];
