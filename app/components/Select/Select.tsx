@@ -15,8 +15,8 @@ type Props = {
 const Select: FC<Props> = ({ onChange, type }) => {
   return (
     <Autocomplete
-      id="standards-select"
-      sx={{ width: 120 }}
+      id="select"
+      sx={{ width: 100 }}
       options={
         ["standardCurrent", "standardExpected"].includes(type)
           ? standards

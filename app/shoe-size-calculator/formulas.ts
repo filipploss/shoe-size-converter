@@ -1,5 +1,5 @@
 import { convert, iso } from "shoe-size-converter";
-import { ICalculate } from "../types";
+import { ICalculate } from "../components/types";
 
 export const calculate = ({
   currentStandard,
