@@ -16,3 +16,12 @@ export interface ICalculate {
   gender: TGender;
   size: null | number;
 }
+
+
+export interface IResult {
+  size: string | number;
+  system: string;
+  women: boolean;
+  children: boolean;
+  
+}

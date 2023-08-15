@@ -1,31 +1,41 @@
-"use client";
-
-import * as React from "react";
-import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
-
-function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
+import { usePathname } from "next/navigation";
+import React, { useMemo } from "react";
+import Crumb from "./components/Crumb";
 
 export default function BasicBreadcrumbs() {
+  const pathname = usePathname();
+
+  const pathToText = (text: string) => {
+    const str = text.replaceAll("-", " ");
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const breadcrumbs = useMemo(() => {
+    const asPathWithoutQuery = pathname.split("?")[0];
+    const asPathNestedRoutes = asPathWithoutQuery
+      .split("/")
+      .filter((v) => v.length > 0);
+
+    const crumblist = asPathNestedRoutes.map((subpath, idx) => {
+      const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      return { href, text: pathToText(subpath) };
+    });
+
+    return [{ href: "/", text: "Home" }, ...crumblist];
+  }, [pathname]);
+
+  if (pathname === "/") return null;
+
   return (
-    <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs aria-label="breadcrumb" sx={{ padding: "10px 24px" }}>
-        <Link underline="hover" color="inherit" href="/">
-          MUI
-        </Link>
-        <Link
-          underline="hover"
-          color="inherit"
-          href="/material-ui/getting-started/installation/"
-        >
-          Core
-        </Link>
-        <Typography color="text.primary">Breadcrumbs</Typography>
-      </Breadcrumbs>
-    </div>
+    <Breadcrumbs
+      aria-label="breadcrumb"
+      separator="›"
+      sx={{ padding: "10px 24px", fontSize: "14px" }}
+    >
+      {breadcrumbs.map((crumb, idx) => (
+        <Crumb {...crumb} key={idx} last={idx === breadcrumbs.length - 1} />
+      ))}
+    </Breadcrumbs>
   );
 }

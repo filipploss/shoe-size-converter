@@ -1,4 +1,4 @@
-import ShoeSizeCalculator from "./shoe-size-calculator/ShoeSizeCalculator";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Link from "next/link";
 import styles from "./page.module.css";
 

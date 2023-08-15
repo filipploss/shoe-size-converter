@@ -13,6 +13,12 @@ type Props = {
 };
 
 const Select: FC<Props> = ({ onChange, type }) => {
+  const defaultValue = type === "standardCurrent"
+  ? standards[0]
+  : type === "standardExpected"
+  ? standards[1]
+  : genders[0]
+  
   return (
     <Autocomplete
       id="select"
@@ -22,13 +28,7 @@ const Select: FC<Props> = ({ onChange, type }) => {
           ? standards
           : genders
       }
-      defaultValue={
-        type === "standardCurrent"
-          ? standards[0]
-          : type === "standardExpected"
-          ? standards[1]
-          : genders[0]
-      }
+      defaultValue={defaultValue}
       autoHighlight
       disableClearable
       onChange={(e, value) => onChange(value)}
