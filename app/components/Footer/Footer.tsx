@@ -22,8 +22,8 @@ export default function StickyFooter() {
       <Container maxWidth="sm">
         <Typography variant="body2" color="text.secondary">
           {"Copyright © "}
-          <Link color="inherit" href="https://mui.com/">
-            Your Website
+          <Link color="inherit" href="https://convertxpert.com/">
+            ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
           {"."}

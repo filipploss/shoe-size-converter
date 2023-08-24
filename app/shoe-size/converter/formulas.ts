@@ -1,6 +1,6 @@
 // @ts-ignore
 import { convert, iso } from "shoe-size-converter";
-import { ICalculate, IResult } from "../components/types";
+import { ICalculate, IResult } from "../../components/types";
 
 export const calculate = ({
   currentStandard,
@@ -23,6 +23,7 @@ export const calculate = ({
       result.find((item: IResult) => item.system === "mondopoint").size / 25.4
     ).toFixed(1);
   } else {
-    return result.find((item: IResult) => item.system === expectedStandard).size;
+    return result.find((item: IResult) => item.system === expectedStandard)
+      .size;
   }
 };

@@ -10,7 +10,7 @@ type Props = {
 
 const Card: FC<Props> = ({ children, title }) => {
   return (
-    <Paper elevation={3} sx={{ padding: "15px", minHeight: "400px" }}>
+    <Paper elevation={3} sx={{ padding: "1rem", minHeight: "400px", marginBottom: '3rem' }}>
       <Paper
         elevation={2}
         sx={{
@@ -18,10 +18,10 @@ const Card: FC<Props> = ({ children, title }) => {
           color: "#FFFFFF",
           margin: "-45px 0 50px",
           minHeight: "85px",
-          padding: "15px",
+          padding: "1rem",
         }}
       >
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h1" gutterBottom textAlign="center">
           {title}
         </Typography>
       </Paper>

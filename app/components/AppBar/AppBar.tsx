@@ -1,6 +1,6 @@
 "use client";
 
-import AdbIcon from "@mui/icons-material/Adb";
+import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,8 +12,9 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import Link from "next/link";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Catalog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -43,25 +44,32 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
+          <Link
+            color="inherit"
             href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
+            style={{
+              display: "flex",
+              alignItems: "center",
             }}
           >
-            LOGO
-          </Typography>
-
+            <SyncAltIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <Typography
+              variant="h5"
+              noWrap
+              component="p"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".2rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              CONVERTXPERT
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -98,31 +106,44 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
+            <Link
+              color="inherit"
+              href="/"
+              style={{
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+              <SyncAltIcon
+                sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+              />
+              <Typography
+                variant="h6"
+                noWrap
+                component="p"
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".1rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                CONVERTXPERT
+              </Typography>
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, padding: '0 8px', color: "white", display: "block" }}
               >
                 {page}
               </Button>

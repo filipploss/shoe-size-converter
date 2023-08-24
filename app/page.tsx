@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <Link href="/shoe-size-calculator">Shoe size calculator</Link>
+        <Link href="/shoe-size/converter">Shoe size converter</Link>
       </div>
     </main>
   );
