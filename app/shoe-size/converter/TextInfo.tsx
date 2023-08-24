@@ -10,16 +10,16 @@ const TextInfo: FC = () => {
       </Typography>
       <Typography gutterBottom>
         Ever wondered why your online shoe shopping often ends up with a wrong
-        fit? It's most likely because of the confusion in shoe size conversion.
+        fit? It&apos;s most likely because of the confusion in shoe size conversion.
         A shoe size converter is a handy tool that can transform your online
         shopping experience. It helps you convert your shoe size to a different
-        country's sizing system. This is especially useful when buying shoes
+        country&apos;s sizing system. This is especially useful when buying shoes
         from international brands. 
       </Typography>
       <Typography gutterBottom>
-        Let's dive into why the use of a shoe size converter, or a boot size
+        Let&apos;s dive into why the use of a shoe size converter, or a boot size
         converter, is vital: These handy tools, often found online, facilitate
-        the conversion of shoe sizes across different geographical regions. It's
+        the conversion of shoe sizes across different geographical regions. It&apos;s
         essential to accurately convert your shoe size if you plan to purchase
         shoes from international brands. A shoe size converter or boot size
         converter does exactly that, it calculates your shoe size according to
@@ -30,10 +30,10 @@ const TextInfo: FC = () => {
         Why Using a Shoe Size Converter is Essential for Online Shopping
       </Typography>
       <Typography gutterBottom>
-        Imagine this scenario: You've found the perfect pair of shoes online, a
-        stylish design that matches your taste impeccably. But wait! It's listed
+        Imagine this scenario: You&apos;ve found the perfect pair of shoes online, a
+        stylish design that matches your taste impeccably. But wait! It&apos;s listed
         in European sizes and you only know your US shoe size. How do you know
-        it will fit? This is where a shoe size converter comes in handy. It's a
+        it will fit? This is where a shoe size converter comes in handy. It&apos;s a
         tool that can help you find your perfect fit, no matter where the shoes
         are from. 
       </Typography>
@@ -43,14 +43,14 @@ const TextInfo: FC = () => {
       <Typography gutterBottom>
         A <strong>shoe size converter</strong> is an easy-to-use tool that
         translates your known shoe size into various international sizing
-        standards. It's essentially a shoe size calculator, providing a quick
+        standards. It&apos;s essentially a shoe size calculator, providing a quick
         and accurate conversion between different shoe size systems. 
       </Typography>
       <Typography variant="h3" gutterBottom>
         Additional Applications: Boot Size Converter 
       </Typography>
       <Typography gutterBottom>
-        But don't think that the use of such a tool is limited to regular shoes
+        But don&apos;t think that the use of such a tool is limited to regular shoes
         only. For those who love a sturdy pair of boots, a 
         <strong>boot size converter</strong> can be invaluable. Boot sizes can
         vary greatly between different brands and countries, but a boot size
@@ -60,7 +60,7 @@ const TextInfo: FC = () => {
         European Shoe Size Conversion 
       </Typography>
       <blockquote>
-        If you're looking to convert your US shoe size to a European one, a{" "}
+        If you&apos;re looking to convert your US shoe size to a European one, a{" "}
         <strong>European shoe size conversion</strong> tool is what you need. It
         allows you to convert <strong>EU shoe size to US size</strong> and vice
         versa, ensuring that you get the optimal fit every single time.
@@ -72,8 +72,8 @@ const TextInfo: FC = () => {
         These converters often come in the form of a 
         <strong>shoe size conversion chart</strong> which can quickly translate{" "}
         <strong>European size to US size</strong> and from many other regions
-        around the globe. They're handy not just for women, but for men too. A 
-        <strong>men's shoe size conversion</strong> chart can help gentlemen
+        around the globe. They&apos;re handy not just for women, but for men too. A 
+        <strong>men&apos;s shoe size conversion</strong> chart can help gentlemen
         navigate the often confusing world of footwear sizing. 
       </Typography>
       <Typography gutterBottom>
@@ -86,12 +86,12 @@ const TextInfo: FC = () => {
       </Typography>
       <Typography gutterBottom>
         Lastly, understanding your <strong>foot size conversion</strong> is key
-        to getting footwear that is comfortable and well-fitting. Because what's
-        a great pair of shoes if they don't fit well? 
+        to getting footwear that is comfortable and well-fitting. Because what&apos;s
+        a great pair of shoes if they don&apos;t fit well? 
       </Typography>
       <Typography gutterBottom>
         In conclusion, a shoe size converter is an essential tool for the modern
-        shopper. Whether you're buying boots or shoes, for men or women, knowing
+        shopper. Whether you&apos;re buying boots or shoes, for men or women, knowing
         how to convert your shoe size can make all the difference in your online
         shopping experience.
       </Typography>
@@ -99,13 +99,13 @@ const TextInfo: FC = () => {
         The Advantages of Using a Shoe Size Calculator for Accurate Sizing
       </Typography>
       <Typography gutterBottom>
-        Whether you're shopping for footwear in store or online, knowing the
+        Whether you&apos;re shopping for footwear in store or online, knowing the
         correct size of the shoe you need is vital. But, did you know that shoe
         sizes can vary significantly between different countries and even
         between different manufacturers? Enter the{" "}
         <strong>shoe size converter</strong> and{" "}
         <strong>shoe size calculator</strong>, tools that can dramatically
-        simplify this often confusing process. Here, we'll explore some of the
+        simplify this often confusing process. Here, we&apos;ll explore some of the
         key advantages of using a shoe size calculator for accurate sizing. 
       </Typography>
       <Typography variant="h3" gutterBottom>
@@ -116,7 +116,7 @@ const TextInfo: FC = () => {
         the perfect fit. This is crucial, not only for comfort but also for
         maintaining good foot health. Incorrectly sized shoes can lead to
         a range of problems, from blisters and corns to more serious foot
-        ailments. So, whether it's a <strong>boot size converter</strong> you
+        ailments. So, whether it&apos;s a <strong>boot size converter</strong> you
         need or a <strong>shoe size calculator</strong>, these tools can be
         instrumental in helping you find the right fit. 
       </Typography>
@@ -125,19 +125,19 @@ const TextInfo: FC = () => {
       </Typography>
       <Typography gutterBottom>
         Another major benefit of these tools is that they make international
-        shopping a breeze. For example, if you're used to US sizes but find
+        shopping a breeze. For example, if you&apos;re used to US sizes but find
         a pair of shoes from a European brand that you absolutely must have, a 
         <strong>European shoe size conversion</strong> tool can be a lifesaver.
         You can quickly and easily convert your{" "}
         <strong>EU shoe size to US</strong> dimensions, eliminating any
         guesswork. 
       </Typography>
-      <h3>Comparing Men's and Women's Sizes </h3>
+      <h3>Comparing Men&apos;s and Women&apos;s Sizes </h3>
       <Typography gutterBottom>
-        It's not just international sizes that can vary - there can also be
-        significant differences between men's and women's sizes. A 
-        <strong>men's shoe size conversion</strong> chart or a 
-        <strong>European shoe size conversion women</strong>'s chart can be
+        It&apos;s not just international sizes that can vary - there can also be
+        significant differences between men&apos;s and women&apos;s sizes. A 
+        <strong>men&apos;s shoe size conversion</strong> chart or a 
+        <strong>European shoe size conversion women</strong>&apos;s chart can be
         invaluable in these situations, helping you compare sizes across genders
         and ensure a more accurate fit. 
       </Typography>
@@ -153,8 +153,8 @@ const TextInfo: FC = () => {
       </Typography>
       <Typography gutterBottom>
         In conclusion, a shoe size converter or calculator is a vital tool for
-        anyone who cares about getting the perfect fit. Whether you're shopping
-        at home or abroad, for men's or women's shoes, understanding how to
+        anyone who cares about getting the perfect fit. Whether you&apos;re shopping
+        at home or abroad, for men&apos;s or women&apos;s shoes, understanding how to
         convert shoe sizes can make the process easier and more enjoyable.
       </Typography>
     </Box>
