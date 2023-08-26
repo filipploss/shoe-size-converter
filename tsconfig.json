@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@/components/*": ["./app/components/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,

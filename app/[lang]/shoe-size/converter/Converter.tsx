@@ -3,10 +3,10 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { FC, useEffect, useState } from "react";
-import Card from "../../components/Card";
-import Select from "../../components/Select";
-import { genders, standards } from "../../components/dictionaries";
-import { TGender, TStandard } from "../../components/types";
+import Card from "@/components/Card";
+import Select from "@/components/Select";
+import { genders, standards } from "@/components/dictionaries";
+import { TGender, TStandard } from "@/components/types";
 import { calculate } from "./formulas";
 import TextInfo from "./TextInfo";
 

@@ -54,7 +54,6 @@ const Select: FC<Props> = ({ onChange, type }) => {
         </Box>
       )}
       renderInput={(params) => {
-        console.log("params", params);
         return (
           <TextField
             {...params}

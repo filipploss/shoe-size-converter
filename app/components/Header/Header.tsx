@@ -1,7 +1,7 @@
 "use client";
 
-import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import MenuIcon from "@mui/icons-material/Menu";
+import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -11,13 +11,14 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import Link from "next/link";
+import * as React from "react";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 const pages = ["Catalog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar() {
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -143,13 +144,18 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, padding: '0 8px', color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  padding: "0 8px",
+                  color: "white",
+                  display: "block",
+                }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
+          <LanguageSwitcher />
           {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -184,4 +190,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Header;

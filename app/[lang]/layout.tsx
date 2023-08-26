@@ -3,11 +3,11 @@
 import Box from "@mui/material/Box";
 import { ThemeProvider } from "@mui/material/styles";
 import { Inter } from "next/font/google";
-import AppBar from "./components/AppBar";
-import Breadcrumbs from "./components/Breadcrumbs";
-import Footer from "./components/Footer";
+import Header from "@/components/Header";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import Footer from "@/components/Footer";
 import "./globals.css";
-import { theme } from "./theme";
+import { theme } from "../[lang]/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     <ThemeProvider theme={theme}>
       <html lang="en">
         <body className={inter.className}>
-          <AppBar />
+          <Header />
           <Breadcrumbs />
           <Box
             alignItems="center"
