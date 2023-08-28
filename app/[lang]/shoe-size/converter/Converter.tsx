@@ -1,16 +1,22 @@
 "use client";
 
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { FC, useEffect, useState } from "react";
 import Card from "@/components/Card";
 import Select from "@/components/Select";
 import { genders, standards } from "@/components/dictionaries";
 import { TGender, TStandard } from "@/components/types";
-import { calculate } from "./formulas";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { FC, useEffect, useState } from "react";
 import TextInfo from "./TextInfo";
+import { calculate } from "./formulas";
 
-const Converter: FC = () => {
+interface IProps {
+  text: any;
+}
+// const Converter: FC = ({ params: { lang }, text }: { params: { lang: Locale }, text?: any }) => {
+const Converter: FC<IProps> = ({ text }) => {
+  // const { shoeSizeConverter } = await getDictionary(lang);
+  console.log("text", text);
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
     standards[0]
   );
@@ -34,7 +40,7 @@ const Converter: FC = () => {
 
   return (
     <>
-      <Card title="Shoe size converter">
+      <Card title={text?.title}>
         <>
           <Box
             alignItems="center"
@@ -98,7 +104,7 @@ const Converter: FC = () => {
           </Box>
         </>
       </Card>
-      <TextInfo />
+      <TextInfo text={text} />
     </>
   );
 };

@@ -26,7 +26,6 @@ export default function StickyFooter() {
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
-          {"."}
         </Typography>
       </Container>
     </Box>

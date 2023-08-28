@@ -2,6 +2,7 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { usePathname } from "next/navigation";
 import React, { useMemo } from "react";
 import Crumb from "./components/Crumb";
+import { i18n, Locale } from "@/i18n.config";
 
 export default function BasicBreadcrumbs() {
   const pathname = usePathname();
@@ -15,8 +16,7 @@ export default function BasicBreadcrumbs() {
     const asPathWithoutQuery = pathname.split("?")[0];
     const asPathNestedRoutes = asPathWithoutQuery
       .split("/")
-      .filter((v) => v.length > 0);
-
+      .filter((v: Locale) => v.length > 0 && !i18n.locales.includes(v));
     const crumblist = asPathNestedRoutes.map((subpath, idx) => {
       const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
       return { href, text: pathToText(subpath) };
@@ -25,7 +25,11 @@ export default function BasicBreadcrumbs() {
     return [{ href: "/", text: "Home" }, ...crumblist];
   }, [pathname]);
 
-  if (pathname === "/") return null;
+  if (
+    pathname === "/" ||
+    i18n.locales.some((el) => el === pathname.replace("/", ""))
+  )
+    return null;
 
   return (
     <Breadcrumbs

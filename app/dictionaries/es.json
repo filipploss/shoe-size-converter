@@ -1,5 +1,12 @@
 {
   "home": {
-    "title": "Zapatos ES"
+    "title": "Zapatos"
+  },
+  "shoeSizeConverter": {
+    "title": "Conversor de tallas de zapatos",
+    "p1": {
+      "title": "¿Para qué sirve el conversor de tallas de zapatos?",
+      "text": "ESPANOL Ever wondered why your online shoe shopping often ends up with a wrong fit ? It & apos;s most likely because of the confusion in shoe sizeconversion. A shoe size converter is a handy tool that can transform your online shopping experience.It helps you convert your shoe size to a different country & apos;s sizing system.This is especially useful when buying shoes from international brands."
+    }
   }
 }

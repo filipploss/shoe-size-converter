@@ -17,9 +17,12 @@ export default function LanguageSwitcher() {
   return (
     <Autocomplete
       disablePortal
+      defaultValue={i18n.defaultLocale}
+      disableClearable
       id="language-switcher"
       options={i18n.locales}
-      sx={{ width: 300 }}
+      size="small"
+      // sx={{ width: 100 }}
       onChange={(e, value) => {
         router.push(redirectedPathName(String(value)));
       }}
