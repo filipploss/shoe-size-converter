@@ -4,9 +4,33 @@
   },
   "shoeSizeConverter": {
     "title": "Shoe size converter",
-    "p1": {
+    "text1": {
       "title": "What is the shoe size converter useful for?",
-      "text": "Ever wondered why your online shoe shopping often ends up with a wrong fit ? It & apos;s most likely because of the confusion in shoe sizeconversion. A shoe size converter is a handy tool that can transform your online shopping experience.It helps you convert your shoe size to a different country & apos;s sizing system.This is especially useful when buying shoes from international brands."
+      "p1": "Ever wondered why your online shoe shopping often ends up with a wrong fit ? It's most likely because of the confusion in shoe sizeconversion. A shoe size converter is a handy tool that can transform your online shopping experience.It helps you convert your shoe size to a different country's sizing system.This is especially useful when buying shoes from international brands.",
+      "p2": "Let's dive into why the use of a shoe size converter, or a bootsize converter, is vital: These handy tools, often found online, facilitate the conversion of shoe sizes across different geographical regions. It's essential to accurately convert your shoe size if you plan to purchase shoes from international brands. A shoe size converter or boot size converter does exactly that, it calculates your shoe size according to different sizing standards. These might include EU shoe size to US, or vice versa."
+    },
+    "text2": {
+      "title": "Why Using a Shoe Size Converter is Essential for Online Shopping",
+      "p1": "Imagine this scenario: You've found the perfect pair of shoes online, a stylish design that matches your taste impeccably. But wait! It's listed in European sizes and you only know your US shoe size. How do you know it will fit? This is where a shoe size converter comes in handy. It's a tool that can help you find your perfect fit, no matter where the shoes are from. "
+    },
+    "text3": {
+      "title": "How does the shoe size calculator work?",
+      "p1": "This shoe size calculator relies on different sizing systems, which are utilized to convert from one system to another. The default system mirrors the ISO standard, albeit loosely, as even the ISO standard acknowledges that shoe size conversion is an unsolved conundrum, unfortunately.",
+      "p2": "All systems are converted to mondopoints and back. The following systems are implemented, either in accordance with specifications or as closely as possible: EU, US, UK, AU, MX, cm and inches"
+    },
+    "text4": {
+      "title": "Example of the European Shoe Size Conversion",
+      "p1": "Ever been confused by the difference between European and US shoe sizes? There's a simple solution.",
+      "p2": "Let's say you have a European shoe size of 38 and need to convert it to a US size. Using a shoe size converter, you can quickly find out the equivalent US size. For example, a European size of 38 converts to a US size of 6.5. Easy, right?"
+    },
+    "text5": {
+      "title": "Conversion Charts",
+      "p1": "The boot size converter allows you to easily convert your shoe size to any global standard. It eliminates the need for various conversion charts such as EU, US, UK, AU, MX, and BR. Additionally, it helps in converting measurements from centimeters to inches for a perfect fit."
+    },
+    "text6": {
+      "title": "Understand Your Foot Size Conversion",
+      "p1": "Understanding your foot size conversion is key to getting footwear that is comfortable and well-fitting. Because what's a great pair of shoes if they don't fit well?",
+      "p2": "In conclusion, a shoe size converter is an essential tool for the modern shopper. Whether you're buying boots or shoes, for men or women, knowing how to convert your shoe size can make all the difference in your online shopping experience."
     }
   }
 }
