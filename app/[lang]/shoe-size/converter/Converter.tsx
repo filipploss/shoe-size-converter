@@ -13,9 +13,8 @@ import { calculate } from "./formulas";
 interface IProps {
   text: any;
 }
-// const Converter: FC = ({ params: { lang }, text }: { params: { lang: Locale }, text?: any }) => {
+
 const Converter: FC<IProps> = ({ text }) => {
-  // const { shoeSizeConverter } = await getDictionary(lang);
   console.log("text", text);
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
     standards[0]
