@@ -1,7 +1,17 @@
 import { FC } from "react";
+import Link from "next/link";
+import { i18n } from "@/i18n.config";
 
 const ShoeSize: FC = () => {
-  return <div>ShoeSize</div>;
+  // TODO: add i18n link
+  return (
+    <Link
+      href={`/en/shoe-size/converter`}
+      style={{ textDecoration: "underline" }}
+    >
+      Shoe size converter
+    </Link>
+  );
 };
 
 export default ShoeSize;

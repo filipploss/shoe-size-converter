@@ -1,6 +1,21 @@
 {
   "home": {
-    "title": "Shoes EN"
+    "title": "Top converters to simplify your life on the web",
+    "text1": "Ever been perplexed by foreign shoe sizes or found yourself scratching your head over how many kilometers make a mile? Or perhaps you've been puzzling over the conversion from kilograms to pounds. We've all been there. That's where our online converters come into play. Designed to simplify your life, they take the guesswork out of these conversions. Here on our website, we've gathered the most popular converters, all ready and waiting to make your day just a little bit easier.",
+    "text2": {
+      "title": "Shoe size",
+      "p1": "Have you ever spotted a pair of must-have shoes online, but they're from a different country? With a ",
+      "p2": ", you can easily figure out your corresponding size. These converters take into account different sizing systems used worldwide, from the US and UK to Europe and Brasil.",
+      "link": "shoe size converter"
+    },
+    "text3": {
+      "title": "Clothing Size",
+      "p1": "Shopping for clothes online from international brands? A clothing size converter will be your best friend. Similar to shoe sizes, clothing sizes also vary greatly from one country to another. With a handy converter, you can be sure to get the right fit."
+    },
+    "text4": {
+      "title": "Weight and Distance",
+      "p1": "Whether you're cooking a recipe that uses metric measurements, or planning a road trip across countries with different distance units, weight and distance converters are undeniably useful. They can convert grams to ounces, kilometers to miles, and so much more."
+    }
   },
   "shoeSizeConverter": {
     "title": "Shoe size converter",
