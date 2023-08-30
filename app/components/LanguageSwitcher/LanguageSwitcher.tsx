@@ -23,7 +23,6 @@ export default function LanguageSwitcher() {
       options={i18n.locales}
       size="small"
       onChange={(e, value) => {
-        console.log("value", value);
         router.push(redirectedPathName(String(value)));
       }}
       renderInput={(params) => {

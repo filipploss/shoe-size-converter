@@ -15,7 +15,6 @@ interface IProps {
 }
 
 const Converter: FC<IProps> = ({ text }) => {
-  console.log("text", text);
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
     standards[0]
   );
