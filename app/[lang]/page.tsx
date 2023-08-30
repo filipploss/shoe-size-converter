@@ -5,6 +5,12 @@ import Link from "next/link";
 import { getDictionary } from "../lib/dictionary";
 import styles from "./page.module.css";
 
+export const metadata = {
+  title: "Convert Like an Expert",
+  description:
+    "Explore the best shoe size, weight, clothing size, and distance converters all in one place. Simplify your conversions for a seamless experience.",
+};
+
 export default async function Home({
   params: { lang },
 }: {
