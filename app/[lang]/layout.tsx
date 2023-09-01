@@ -38,7 +38,7 @@ export default function RootLayout({
             }}
           />
           <Header lang={lang} />
-          <Breadcrumbs />
+          <Breadcrumbs lang={lang} />
           <Box
             alignItems="center"
             border="1px solid red"
@@ -49,7 +49,7 @@ export default function RootLayout({
           >
             {children}
           </Box>
-          <Footer />
+          <Footer lang={lang} />
         </body>
       </html>
     </ThemeProvider>

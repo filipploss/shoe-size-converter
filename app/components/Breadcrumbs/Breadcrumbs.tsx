@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import Crumb from "./components/Crumb";
 import { i18n, Locale } from "@/i18n.config";
 
-export default function BasicBreadcrumbs() {
+export default function BasicBreadcrumbs({ lang }: { lang: Locale }) {
   const pathname = usePathname();
 
   const pathToText = (text: string) => {
@@ -18,12 +18,12 @@ export default function BasicBreadcrumbs() {
       .split("/")
       .filter((v: Locale) => v.length > 0 && !i18n.locales.includes(v));
     const crumblist = asPathNestedRoutes.map((subpath, idx) => {
-      const href = "/" + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      const href = `/${lang}/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
       return { href, text: pathToText(subpath) };
     });
 
-    return [{ href: "/", text: "Home" }, ...crumblist];
-  }, [pathname]);
+    return [{ href: `/${lang}`, text: "Home" }, ...crumblist];
+  }, [pathname, lang]);
 
   if (
     pathname === "/" ||
