@@ -119,7 +119,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`${lang}/shoe-size/converter`);
+                            router.push(`/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
@@ -202,7 +202,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`${lang}/shoe-size/converter`);
+                            router.push(`/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
