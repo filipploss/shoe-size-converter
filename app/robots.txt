@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://convertxpert.com/
+Host: https://convertxpert.com/en
 
 # Sitemaps
 Sitemap: https://convertxpert.com/sitemap.xml
