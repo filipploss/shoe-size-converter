@@ -56,7 +56,7 @@ export default function Header({ lang }: { lang: Locale }) {
         <Toolbar disableGutters>
           <Link
             color="inherit"
-            href="/"
+            href={`/${lang}`}
             style={{
               display: "flex",
               alignItems: "center",
@@ -119,7 +119,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/shoe-size/converter`);
+                            router.push(`/${lang}shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
@@ -134,7 +134,7 @@ export default function Header({ lang }: { lang: Locale }) {
           <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
             <Link
               color="inherit"
-              href="/"
+              href={`/${lang}`}
               style={{
                 alignItems: "center",
                 display: "flex",
@@ -202,7 +202,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/shoe-size/converter`);
+                            router.push(`/${lang}shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
