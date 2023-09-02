@@ -49,14 +49,15 @@ export default function Header({ lang }: { lang: Locale }) {
   }
 
   const anchorRef = React.useRef<HTMLButtonElement>(null);
-// TODO: Create popup menu separate compornent
+  // TODO: Create popup menu separate compornent
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link
             color="inherit"
-            href={`/${lang}`}
+            // href={`/${lang}`}
+            href="/"
             style={{
               display: "flex",
               alignItems: "center",
@@ -119,7 +120,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/${lang}shoe-size/converter`);
+                            router.push(`/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
@@ -134,7 +135,8 @@ export default function Header({ lang }: { lang: Locale }) {
           <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
             <Link
               color="inherit"
-              href={`/${lang}`}
+              // href={`/${lang}`}
+              href="/"
               style={{
                 alignItems: "center",
                 display: "flex",
@@ -202,7 +204,7 @@ export default function Header({ lang }: { lang: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/${lang}shoe-size/converter`);
+                            router.push(`/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
