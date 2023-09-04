@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default async function Home({
-  params: { lang = 'en' },
+  params: { lang = "en" },
 }: {
   params: { lang: Locale };
 }) {
@@ -37,7 +37,7 @@ export default async function Home({
         <Typography gutterBottom marginBottom="1.5rem">
           {home.text2.p1}{" "}
           <Link
-            href={`${lang}/shoe-size/converter`}
+            href={`shoe-size/converter`}
             style={{ textDecoration: "underline" }}
           >
             {home.text2.link}
@@ -45,16 +45,16 @@ export default async function Home({
           {home.text2.p2}
         </Typography>
         <Typography variant="h2" gutterBottom>
-        {home.text3.title}
+          {home.text3.title}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-        {home.text3.p1}
+          {home.text3.p1}
         </Typography>
         <Typography variant="h2" gutterBottom>
-        {home.text4.title}
+          {home.text4.title}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-        {home.text4.p1}
+          {home.text4.p1}
         </Typography>
       </Box>
       {/* <div className={styles.description}> */}
