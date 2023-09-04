@@ -8,15 +8,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     //   lastModified: new Date(),
     // },
     {
-      url: `${baseUrl}/en`,
+      url: `${baseUrl}/`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/en/shoe-size`,
+      url: `${baseUrl}/shoe-size`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/en/shoe-size/converter`,
+      url: `${baseUrl}/shoe-size/converter`,
       lastModified: new Date(),
     },
   ];
