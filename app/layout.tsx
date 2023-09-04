@@ -7,17 +7,17 @@ import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import { ThemeProvider } from "@mui/material/styles";
 import Script from "next/script";
-import { theme } from "../[lang]/theme";
+import { theme } from "./theme";
 import "./globals.css";
 
 export default function RootLayout({
   children,
-  params: { lang },
+  params: { lang = "en" },
 }: {
   children: React.ReactNode;
   params: { lang: Locale };
 }) {
-  console.log('layout lang', lang)
+  console.log("layout lang", lang);
   return (
     <ThemeProvider theme={theme}>
       <html lang={lang}>

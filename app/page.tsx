@@ -2,7 +2,7 @@ import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { getDictionary } from "../lib/dictionary";
+import { getDictionary } from "./lib/dictionary";
 import styles from "./page.module.css";
 
 export const metadata = {
@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default async function Home({
-  params: { lang },
+  params: { lang = 'en' },
 }: {
   params: { lang: Locale };
 }) {
