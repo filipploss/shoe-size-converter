@@ -6,7 +6,7 @@ const ShoeSize: FC = () => {
   // TODO: add i18n link
   return (
     <Link
-      href={`/en/shoe-size/converter`}
+      href={`/shoe-size/converter`}
       style={{ textDecoration: "underline" }}
     >
       Shoe size converter
