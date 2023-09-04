@@ -6,6 +6,7 @@ import { i18n, Locale } from "@/i18n.config";
 
 export default function BasicBreadcrumbs({ lang }: { lang: Locale }) {
   const pathname = usePathname();
+  console.log("pathname", pathname);
 
   const pathToText = (text: string) => {
     const str = text.replaceAll("-", " ");
@@ -18,12 +19,15 @@ export default function BasicBreadcrumbs({ lang }: { lang: Locale }) {
       .split("/")
       .filter((v: Locale) => v.length > 0 && !i18n.locales.includes(v));
     const crumblist = asPathNestedRoutes.map((subpath, idx) => {
-      const href = `/${lang}/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      // const href = `/${lang}/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
+      const href = `/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
       return { href, text: pathToText(subpath) };
     });
 
-    return [{ href: `/${lang}`, text: "Home" }, ...crumblist];
-  }, [pathname, lang]);
+    // return [{ href: `/${lang}`, text: "Home" }, ...crumblist];
+    return [{ href: `/`, text: "Home" }, ...crumblist];
+  // }, [pathname, lang]);
+  }, [pathname]);
 
   if (
     pathname === "/" ||

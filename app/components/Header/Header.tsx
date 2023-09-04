@@ -19,7 +19,7 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
-// import LanguageSwitcher from '../LanguageSwitcher'
+import LanguageSwitcher from '../LanguageSwitcher'
 
 export default function Header({ lang }: { lang: Locale }) {
   const router = useRouter();
