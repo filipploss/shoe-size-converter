@@ -21,7 +21,7 @@ export default function StickyFooter({ lang }: { lang: Locale }) {
       <Container maxWidth="sm">
         <Typography variant="body2" color="text.secondary">
           {"Copyright © "}
-          <Link color="inherit" href={`https://convertxpert.com/${lang}`}>
+          <Link color="inherit" href={`https://convertxpert.com/`}>
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
