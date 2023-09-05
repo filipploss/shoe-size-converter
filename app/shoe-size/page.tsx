@@ -5,7 +5,7 @@ import { Locale } from "@/i18n.config";
 export const metadata = {
   title: "Discovering Your Perfect Shoe Size: A Comprehensive Guide",
   description:
-    "Unlock comfort and style with our ultimate shoe size guide.",
+    "Step forward with confidence, knowing you have the perfect shoe size with our guide.",
 };
 
 export default async function Page({
