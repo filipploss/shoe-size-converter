@@ -47,5 +47,50 @@
       "p1": "Understanding your foot size conversion is key to getting footwear that is comfortable and well-fitting. Because what's a great pair of shoes if they don't fit well?",
       "p2": "In conclusion, a shoe size converter is an essential tool for the modern shopper. Whether you're buying boots or shoes, for men or women, knowing how to convert your shoe size can make all the difference in your online shopping experience."
     }
+  },
+  "shoeSize": {
+    "title": "Shoe size guide",
+    "text1": {
+      "p1": "Have you ever considered why finding the right shoe size is essential? Not only does it ensure comfort when you are walking or running, but it also helps prevent foot problems. Misfit shoes can lead to discomfort, blisters, and even long-term foot problems. But how do you ensure that you're getting the right shoe size? Let's delve into that."
+    },
+    "text2": {
+      "title": "The Different Approaches to Shoe Size Measurement",
+      "p1": "You might be surprised to know that there isn't a universal shoe size standard. Various countries and shoe manufacturers often use different measurements, which can make finding the right shoe size a bit tricky.",
+      "l1p1": "Brannock Device: ",
+      "l1p2": "This is a common measurement tool found in many shoe stores. It measures the length, width, and arch length of your foot.",
+      "l2p1": "Foot Tracing: ",
+      "l2p2": "This method involves tracing your foot on a piece of paper and then measuring the length and width.",
+      "l3p1": "Online Tools: ",
+      "l3p2": "Isn't it wonderful that numerous online retailers have made it easy to measure your shoe size right from your home? They offer printable foot measurement tools and interactive guides tailored to assist you. Additionally, our ",
+      "l3p3": " is here to make your shoe-shopping journey even easier!"
+    },
+    "text3": {
+      "title": "Factors That Affect Shoe Size: Age, Weight, and More",
+      "p1": "Several factors can affect your shoe size. Naturally, age and growth play a huge role, especially in children whose feet are still developing. However, shoe size can also change in adults due to factors like weight gain or loss, pregnancy, or ageing.",
+      "p2": "Note: Foot size can also fluctuate throughout the day. It's usually best to measure your foot size in the afternoon or evening, when your feet have typically expanded a bit."
+    },
+
+
+
+
+
+
+    "text4": {
+      "title": "Tips for Finding the Right Shoe Size for Your Feet",
+      "p1": "Finding the right shoe size goes beyond just measuring your foot. Here are some additional tips to ensure a good fit:",
+      "l1p1": "Try on shoes later in the day: ",
+      "l1p2": "Since your feet naturally expand throughout the day, trying on shoes in the afternoon or evening can give you a more accurate size.",
+      "l2p1": "Wear the type of socks you'd usually wear with the shoes: ",
+      "l2p2": "Wear the type of socks you'd usually wear with the shoes: Different types of socks can affect how shoes fit.",
+      "l3p1": "Consider the width as well as the length: ",
+      "l3p2": "Shoes that are the right length but too narrow or too wide can cause discomfort.",
+      "l4p1": "Shopping for shoes from abroad? ",
+      "l4p2": "Use our ",
+      "l4p3": " and size charts for the right fit."
+    },
+    "text5": {
+      "title": "Choosing the Right Shoe Size for Maximum Comfort and Health",
+      "p1": "Choosing the right shoe size is not just about fashion, but it's fundamentally about your comfort and overall foot health. An ill-fitting shoe can lead to a myriad of problems like bunions, corns, hammertoe, and even back pain. But armed with the right information and awareness, you can ensure that your shoes are the perfect fit, every time."
+    }
   }
 }

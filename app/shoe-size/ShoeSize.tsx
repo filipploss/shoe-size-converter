@@ -1,16 +1,111 @@
-import { FC } from "react";
+import { Box, List, ListItem, Typography } from "@mui/material/";
 import Link from "next/link";
-import { i18n } from "@/i18n.config";
+import { FC } from "react";
 
-const ShoeSize: FC = () => {
+interface IProps {
+  text: any;
+}
+
+const ShoeSize: FC<IProps> = async ({ text }) => {
   // TODO: add i18n link
+  const { title, text1, text2, text3, text4, text5, text6 } = text;
   return (
-    <Link
-      href={`/shoe-size/converter`}
-      style={{ textDecoration: "underline" }}
-    >
-      Shoe size converter
-    </Link>
+    <>
+      <Box maxWidth="700px">
+        <Box marginBottom="1.5rem">
+          <Typography
+            fontSize={30}
+            fontWeight={700}
+            marginBottom="1rem"
+            variant="h1"
+          >
+            {title}
+          </Typography>
+          <Typography gutterBottom>{text1.p1}</Typography>
+        </Box>
+        <Box marginBottom="1.5rem">
+          <Typography variant="h2" gutterBottom>
+            {text2.title}
+          </Typography>
+          <Typography gutterBottom>{text2.p1}</Typography>
+          <Typography component="div" gutterBottom>
+            <List
+              sx={{
+                listStyleType: "disc",
+                listStylePosition: "inside",
+                pl: 2,
+              }}
+            >
+              <ListItem sx={{ display: "list-item" }}>
+                {<b>{text2.l1p1}</b>}
+                {text2.l1p2}
+              </ListItem>
+              <ListItem sx={{ display: "list-item" }}>
+                {<b>{text2.l2p1}</b>}
+                {text2.l2p2}
+              </ListItem>
+              <ListItem sx={{ display: "list-item" }}>
+                {<b>{text2.l3p1}</b>}
+                {text2.l3p2}
+                <Link
+                  href={`/shoe-size/converter`}
+                  style={{ textDecoration: "underline" }}
+                >
+                  shoe size converter
+                </Link>
+                {text2.l3p3}
+              </ListItem>
+            </List>
+          </Typography>
+        </Box>
+        <Box marginBottom="1.5rem">
+          <Typography variant="h2" gutterBottom>
+            {text3.title}
+          </Typography>
+          <Typography gutterBottom>{text3.p1}</Typography>
+          <Typography gutterBottom>{text3.p2}</Typography>
+        </Box>
+        <Typography component="div" gutterBottom>
+          <List
+            sx={{
+              listStyleType: "decimal",
+              listStylePosition: "inside",
+              pl: 2,
+            }}
+          >
+            <ListItem sx={{ display: "list-item" }}>
+              {<b>{text4.l1p1}</b>}
+              {text4.l1p2}
+            </ListItem>
+            <ListItem sx={{ display: "list-item" }}>
+              {<b>{text4.l2p1}</b>}
+              {text4.l2p2}
+            </ListItem>
+            <ListItem sx={{ display: "list-item" }}>
+              {<b>{text4.l3p1}</b>}
+              {text4.l3p2}
+            </ListItem>
+            <ListItem sx={{ display: "list-item" }}>
+              {<b>{text4.l4p1}</b>}
+              {text4.l4p2}
+              <Link
+                href={`/shoe-size/converter`}
+                style={{ textDecoration: "underline" }}
+              >
+                shoe size calculator
+              </Link>
+              {text4.l4p3}
+            </ListItem>
+          </List>
+        </Typography>
+        <Box marginBottom="1.5rem">
+          <Typography variant="h2" gutterBottom>
+            {text5.title}
+          </Typography>
+          <Typography gutterBottom>{text5.p1}</Typography>
+        </Box>
+      </Box>
+    </>
   );
 };
 
