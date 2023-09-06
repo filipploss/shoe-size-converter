@@ -4,7 +4,7 @@ import React, { useMemo } from "react";
 import Crumb from "./components/Crumb";
 import { i18n, Locale } from "@/i18n.config";
 
-export default function BasicBreadcrumbs({ lang }: { lang: Locale }) {
+export default function BasicBreadcrumbs({ lang }: { lang: string }) {
   const pathname = usePathname();
   console.log("pathname", pathname);
 

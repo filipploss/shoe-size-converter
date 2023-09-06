@@ -1,26 +1,25 @@
 "use client";
 
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import { ThemeProvider } from "@mui/material/styles";
+import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import Script from "next/script";
-import { theme } from "./theme";
+import Breadcrumbs from "./components/Breadcrumbs";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import "./globals.css";
+import { theme } from "./theme";
 
-export default function RootLayout({
-  children,
-  params: { lang = "en" },
-}: {
-  children: React.ReactNode;
-  params: { lang: Locale };
-}) {
-  console.log("layout lang", lang);
+export default function RootLayout({ children, params }: any) {
+  const locale = useLocale();
+  if (params.locale !== locale) {
+    notFound();
+  }
+  console.log("layout locale", locale);
   return (
     <ThemeProvider theme={theme}>
-      <html lang={lang}>
+      <html lang={locale}>
         <head>
           <Script id="google-tag-manager" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -38,8 +37,8 @@ export default function RootLayout({
                 '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCS9WXQD" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
             }}
           />
-          <Header lang={lang} />
-          <Breadcrumbs lang={lang} />
+          <Header lang={locale} />
+          <Breadcrumbs lang={locale} />
           <Box
             alignItems="center"
             border="1px solid red"
@@ -50,7 +49,7 @@ export default function RootLayout({
           >
             {children}
           </Box>
-          <Footer lang={lang} />
+          <Footer lang={locale} />
         </body>
       </html>
     </ThemeProvider>

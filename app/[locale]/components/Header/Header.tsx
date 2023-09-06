@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation";
 import * as React from "react";
 import LanguageSwitcher from '../LanguageSwitcher'
 
-export default function Header({ lang }: { lang: Locale }) {
+export default function Header({ lang }: { lang: string }) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const handleToggle = () => {

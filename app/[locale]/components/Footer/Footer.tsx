@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import { Locale } from "@/i18n.config";
 
-export default function StickyFooter({ lang }: { lang: Locale }) {
+export default function StickyFooter({ lang }: { lang: string }) {
   return (
     <Box
       component="footer"
