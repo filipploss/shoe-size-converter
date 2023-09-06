@@ -21,6 +21,8 @@ export default function RootLayout({ children, params }: any) {
     <ThemeProvider theme={theme}>
       <html lang={locale}>
         <head>
+          {/* убрать */}
+        <meta name="ahrefs-site-verification" content="b011a322cec79e0cc16b984f3bb4641c2c98e9d8391da6951953057d918223d6"/>
           <Script id="google-tag-manager" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
