@@ -2,9 +2,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { Locale } from "@/i18n.config";
 
-export default function StickyFooter({ lang }: { lang: string }) {
+export default function StickyFooter() {
   return (
     <Box
       component="footer"
@@ -12,10 +11,10 @@ export default function StickyFooter({ lang }: { lang: string }) {
         py: 3,
         px: 2,
         mt: "auto",
-        backgroundColor: (theme) =>
-          theme.palette.mode === "light"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        // backgroundColor: (theme) =>
+        //   theme.palette.mode === "light"
+        //     ? theme.palette.grey[200]
+        //     : theme.palette.grey[800],
       }}
     >
       <Container maxWidth="sm">

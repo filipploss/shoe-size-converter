@@ -1,12 +1,13 @@
+"use client" 
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { usePathname } from "next/navigation";
 import React, { useMemo } from "react";
 import Crumb from "./components/Crumb";
 import { i18n, Locale } from "@/i18n.config";
 
-export default function BasicBreadcrumbs({ lang }: { lang: string }) {
+export default function BasicBreadcrumbs() {
+  const { locales } = i18n;
   const pathname = usePathname();
-  console.log("pathname", pathname);
 
   const pathToText = (text: string) => {
     const str = text.replaceAll("-", " ");
@@ -17,21 +18,18 @@ export default function BasicBreadcrumbs({ lang }: { lang: string }) {
     const asPathWithoutQuery = pathname.split("?")[0];
     const asPathNestedRoutes = asPathWithoutQuery
       .split("/")
-      .filter((v: Locale) => v.length > 0 && !i18n.locales.includes(v));
+      .filter((v: Locale) => v.length > 0 && !locales.includes(v));
     const crumblist = asPathNestedRoutes.map((subpath, idx) => {
-      // const href = `/${lang}/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
       const href = `/` + asPathNestedRoutes.slice(0, idx + 1).join("/");
       return { href, text: pathToText(subpath) };
     });
 
-    // return [{ href: `/${lang}`, text: "Home" }, ...crumblist];
     return [{ href: `/`, text: "Home" }, ...crumblist];
-  // }, [pathname, lang]);
-  }, [pathname]);
+  }, [pathname, locales]);
 
   if (
     pathname === "/" ||
-    i18n.locales.some((el) => el === pathname.replace("/", ""))
+    locales.some((el) => el === pathname.replace("/", ""))
   )
     return null;
 

@@ -19,9 +19,9 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
-import LanguageSwitcher from '../LanguageSwitcher'
+import LanguageSwitcher from "../LanguageSwitcher";
 
-export default function Header({ lang }: { lang: string }) {
+export default function Header({ locale }: { locale: Locale }) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const handleToggle = () => {
@@ -217,7 +217,7 @@ export default function Header({ lang }: { lang: string }) {
             </Popper>
           </Box>
           {/* check */}
-          {/* <LanguageSwitcher /> */}
+          <LanguageSwitcher locale={locale} />
         </Toolbar>
       </Container>
     </AppBar>

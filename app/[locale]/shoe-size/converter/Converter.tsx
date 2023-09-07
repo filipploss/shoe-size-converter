@@ -9,12 +9,10 @@ import TextField from "@mui/material/TextField";
 import { FC, useEffect, useState } from "react";
 import TextInfo from "./TextInfo";
 import { calculate } from "./formulas";
+import {useTranslations} from 'next-intl';
 
-interface IProps {
-  text: any;
-}
 
-const Converter: FC<IProps> = ({ text }) => {
+const Converter: FC = () => {
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
     standards[0]
   );
@@ -24,6 +22,7 @@ const Converter: FC<IProps> = ({ text }) => {
   const [gender, setGender] = useState<TGender>(genders[0]);
   const [result, setResult] = useState("");
   const [size, setSize] = useState<null | number>(null);
+  const t = useTranslations('shoeSizeConverter');
 
   useEffect(() => {
     setResult(
@@ -38,7 +37,7 @@ const Converter: FC<IProps> = ({ text }) => {
 
   return (
     <>
-      <Card title={text?.title}>
+      <Card title={t('title')}>
         <>
           <Box
             alignItems="center"
@@ -102,7 +101,7 @@ const Converter: FC<IProps> = ({ text }) => {
           </Box>
         </>
       </Card>
-      <TextInfo text={text} />
+      {/* <TextInfo text={text} /> */}
     </>
   );
 };

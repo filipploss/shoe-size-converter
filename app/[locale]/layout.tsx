@@ -1,59 +1,72 @@
-"use client";
-
 import Box from "@mui/material/Box";
-import { ThemeProvider } from "@mui/material/styles";
-import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
-import { theme } from "./theme";
+import ThemeProvider from "./theme-provider";
+import { NextIntlClientProvider } from "next-intl";
 
-export default function RootLayout({ children, params }: any) {
-  const locale = useLocale();
-  if (params.locale !== locale) {
+// import from file!!!
+// export function generateStaticParams() {
+//   return [{ locale: "en" }, { locale: "es" }];
+// }
+
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: any) {
+  console.log("LOCALE", locale);
+  let messages;
+  try {
+    messages = (await import(`@/messages/${locale}.json`)).default;
+  } catch (error) {
     notFound();
   }
-  console.log("layout locale", locale);
+
   return (
-    <ThemeProvider theme={theme}>
-      <html lang={locale}>
-        <head>
-          {/* убрать */}
-        <meta name="ahrefs-site-verification" content="b011a322cec79e0cc16b984f3bb4641c2c98e9d8391da6951953057d918223d6"/>
-          <Script id="google-tag-manager" strategy="afterInteractive">
-            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <html lang={locale}>
+      <head>
+        {/* TODO: remove meta ahrefs */}
+        <meta
+          name="ahrefs-site-verification"
+          content="b011a322cec79e0cc16b984f3bb4641c2c98e9d8391da6951953057d918223d6"
+        />
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-WCS9WXQD');        
-          `}
-          </Script>
-        </head>
-        <body>
-          <noscript
-            dangerouslySetInnerHTML={{
-              __html:
-                '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCS9WXQD" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
-            }}
-          />
-          <Header lang={locale} />
-          <Breadcrumbs lang={locale} />
-          <Box
-            alignItems="center"
-            border="1px solid red"
-            display="flex"
-            flexDirection="column"
-            minHeight="calc(100vh - 181px)"
-            padding="60px 20px 20px"
-          >
-            {children}
-          </Box>
-          <Footer lang={locale} />
-        </body>
-      </html>
-    </ThemeProvider>
+        })(window,document,'script','dataLayer','GTM-WCS9WXQD');        
+        `}
+        </Script>
+      </head>
+      <body>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html:
+              '<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCS9WXQD" height="0" width="0" style="display:none;visibility:hidden"></iframe>',
+          }}
+        />
+        <ThemeProvider>
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header locale={locale} />
+            <Breadcrumbs />
+            <Box
+              alignItems="center"
+              border="1px solid red"
+              display="flex"
+              flexDirection="column"
+              minHeight="calc(100vh - 181px)"
+              padding="60px 20px 20px"
+            >
+              {children}
+            </Box>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

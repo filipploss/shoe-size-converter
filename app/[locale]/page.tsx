@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n.config";
+// import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";

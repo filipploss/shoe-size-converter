@@ -1,14 +1,17 @@
 import { Box, List, ListItem, Typography } from "@mui/material/";
 import Link from "next/link";
 import { FC } from "react";
+import {useTranslations} from 'next-intl';
 
 interface IProps {
-  text: any;
+  // text: any;
 }
 
-const ShoeSize: FC<IProps> = async ({ text }) => {
-  // TODO: add i18n link
-  const { title, text1, text2, text3, text4, text5, text6 } = text;
+// const ShoeSize: FC<IProps> = async ({ text }) => {
+const ShoeSize: FC<IProps> = () => {
+  // TODO: add i18n link\
+  const t = useTranslations('shoeSize');
+  // const { title, text1, text2, text3, text4, text5, text6 } = text;
   return (
     <>
       <Box maxWidth="700px">
@@ -19,16 +22,16 @@ const ShoeSize: FC<IProps> = async ({ text }) => {
             marginBottom="1rem"
             variant="h1"
           >
-            {title}
+             {t('title')}
           </Typography>
-          <Typography gutterBottom>{text1.p1}</Typography>
+          <Typography gutterBottom>{t('text1.p1')}</Typography>
         </Box>
         <Box marginBottom="1.5rem">
           <Typography variant="h2" gutterBottom>
-            {text2.title}
+            {/* {text2.title} */}
           </Typography>
-          <Typography gutterBottom>{text2.p1}</Typography>
-          <Typography component="div" gutterBottom>
+          {/* <Typography gutterBottom>{text2.p1}</Typography> */}
+          {/* <Typography component="div" gutterBottom>
             <List
               sx={{
                 listStyleType: "disc",
@@ -56,16 +59,16 @@ const ShoeSize: FC<IProps> = async ({ text }) => {
                 {text2.l3p3}
               </ListItem>
             </List>
-          </Typography>
+          </Typography> */}
         </Box>
         <Box marginBottom="1.5rem">
-          <Typography variant="h2" gutterBottom>
+          {/* <Typography variant="h2" gutterBottom>
             {text3.title}
           </Typography>
           <Typography gutterBottom>{text3.p1}</Typography>
-          <Typography gutterBottom>{text3.p2}</Typography>
+          <Typography gutterBottom>{text3.p2}</Typography> */}
         </Box>
-        <Typography component="div" gutterBottom>
+        {/* <Typography component="div" gutterBottom>
           <List
             sx={{
               listStyleType: "decimal",
@@ -97,13 +100,13 @@ const ShoeSize: FC<IProps> = async ({ text }) => {
               {text4.l4p3}
             </ListItem>
           </List>
-        </Typography>
-        <Box marginBottom="1.5rem">
+        </Typography> */}
+        {/* <Box marginBottom="1.5rem">
           <Typography variant="h2" gutterBottom>
             {text5.title}
           </Typography>
           <Typography gutterBottom>{text5.p1}</Typography>
-        </Box>
+        </Box> */}
       </Box>
     </>
   );
