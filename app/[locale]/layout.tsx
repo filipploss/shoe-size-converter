@@ -52,7 +52,7 @@ export default async function RootLayout({
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Header locale={locale} />
-            <Breadcrumbs />
+            <Breadcrumbs locale={locale}/>
             <Box
               alignItems="center"
               border="1px solid red"
@@ -63,7 +63,7 @@ export default async function RootLayout({
             >
               {children}
             </Box>
-            <Footer />
+            <Footer locale={locale}/>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

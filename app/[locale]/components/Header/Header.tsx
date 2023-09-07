@@ -1,6 +1,6 @@
 "use client";
 
-import { Locale } from "@/i18n.config";
+import { Locale, i18n } from "@/i18n.config";
 import MenuIcon from "@mui/icons-material/Menu";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import AppBar from "@mui/material/AppBar";
@@ -22,6 +22,8 @@ import * as React from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function Header({ locale }: { locale: Locale }) {
+  const { defaultLocale } = i18n;
+  const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const handleToggle = () => {
@@ -56,8 +58,7 @@ export default function Header({ locale }: { locale: Locale }) {
         <Toolbar disableGutters>
           <Link
             color="inherit"
-            // href={`/${lang}`}
-            href="/"
+            href={localePath}
             style={{
               display: "flex",
               alignItems: "center",
@@ -120,7 +121,7 @@ export default function Header({ locale }: { locale: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/shoe-size/converter`);
+                            router.push(`/${locale}/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter
@@ -135,8 +136,7 @@ export default function Header({ locale }: { locale: Locale }) {
           <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
             <Link
               color="inherit"
-              // href={`/${lang}`}
-              href="/"
+              href={localePath}
               style={{
                 alignItems: "center",
                 display: "flex",
@@ -204,7 +204,7 @@ export default function Header({ locale }: { locale: Locale }) {
                       >
                         <MenuItem
                           onClick={() => {
-                            router.push(`/shoe-size/converter`);
+                            router.push(`/${locale}/shoe-size/converter`);
                           }}
                         >
                           Shoe size converter

@@ -1,4 +1,3 @@
-// "use client";
 import ShoeSize from "./ShoeSize";
 
 export const metadata = {

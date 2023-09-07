@@ -1,18 +1,28 @@
-// import { Locale } from "@/i18n.config";
+import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+import { getTranslator } from "next-intl/server";
 import Link from "next/link";
 import styles from "./page.module.css";
-import {useTranslations} from 'next-intl';
 
-export const metadata = {
-  title: "Convert Like an Expert",
-  description:
-    "Explore the best shoe size, weight, clothing size, and distance converters all in one place. Simplify your conversions for a seamless experience.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const { locale } = params;
+  const t = await getTranslator(locale, "home.metadata");
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default function Home() {
-  const t = useTranslations('home');
+  const t = useTranslations("home");
   return (
     <main className={styles.main}>
       <Box maxWidth="700px">
@@ -22,7 +32,7 @@ export default function Home() {
           fontSize={30}
           marginBottom="1rem"
         >
-          {t('title')}
+          {t("title")}
           {/* {home.title} */}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">

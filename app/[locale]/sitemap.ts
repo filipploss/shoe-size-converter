@@ -19,5 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/shoe-size/converter`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/es`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/es/shoe-size`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/es/shoe-size/converter`,
+      lastModified: new Date(),
+    },
   ];
 }

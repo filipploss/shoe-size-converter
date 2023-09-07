@@ -2,8 +2,11 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
+import { Locale, i18n } from "@/i18n.config";
 
-export default function StickyFooter() {
+export default function StickyFooter({ locale }: { locale: Locale }) {
+  const { locales, defaultLocale } = i18n;
+  const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
   return (
     <Box
       component="footer"
@@ -20,7 +23,7 @@ export default function StickyFooter() {
       <Container maxWidth="sm">
         <Typography variant="body2" color="text.secondary">
           {"Copyright © "}
-          <Link color="inherit" href={`https://convertxpert.com/`}>
+          <Link color="inherit" href={`https://convertxpert.com${localePath}`}>
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
