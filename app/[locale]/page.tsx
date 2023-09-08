@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n.config";
+import { Locale, i18n } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Metadata } from "next";
@@ -8,11 +8,10 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 export async function generateMetadata({
-  params,
+  params: { locale },
 }: {
   params: { locale: Locale };
 }): Promise<Metadata> {
-  const { locale } = params;
   const t = await getTranslator(locale, "home.metadata");
 
   return {
@@ -21,52 +20,54 @@ export async function generateMetadata({
   };
 }
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
   const t = useTranslations("home");
+
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
   return (
     <main className={styles.main}>
       <Box maxWidth="700px">
         <Typography
-          variant="h1"
-          fontWeight={700}
           fontSize={30}
+          fontWeight={700}
           marginBottom="1rem"
+          variant="h1"
         >
           {t("title")}
-          {/* {home.title} */}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-          {/* {home.text1} */}
+          {t("text1")}
         </Typography>
         <Typography variant="h2" gutterBottom>
-          {/* {home.text2.title} */}
+          {t("text2.title")}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-          {/* {home.text2.p1}{" "} */}
+          {t("text2.p1")}
           <Link
-            href={`shoe-size/converter`}
+            href={`${localePath}shoe-size/converter`}
             style={{ textDecoration: "underline" }}
           >
-            {/* {home.text2.link} */}
+            {t("text2.link")}
           </Link>
-          {/* {home.text2.p2} */}
+          {t("text2.p2")}
         </Typography>
         <Typography variant="h2" gutterBottom>
-          {/* {home.text3.title} */}
+          {t("text3.title")}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-          {/* {home.text3.p1} */}
+          {t("text3.p1")}
         </Typography>
         <Typography variant="h2" gutterBottom>
-          {/* {home.text4.title} */}
+          {t("text4.title")}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-          {/* {home.text4.p1} */}
+          {t("text4.p1")}
         </Typography>
       </Box>
-      {/* <div className={styles.description}> */}
-      {/* <Link href={`${lang}/shoe-size/converter`}>{home.title}</Link> */}
-      {/* </div> */}
     </main>
   );
 }
