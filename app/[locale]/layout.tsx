@@ -57,7 +57,6 @@ export default async function RootLayout({
             <Breadcrumbs locale={locale} />
             <Box
               alignItems="center"
-              border="1px solid red"
               display="flex"
               flexDirection="column"
               minHeight="calc(100vh - 181px)"

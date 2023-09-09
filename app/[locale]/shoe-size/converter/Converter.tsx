@@ -1,18 +1,17 @@
 "use client";
 
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import { useTranslations } from "next-intl";
+import { FC, useEffect, useState } from "react";
 import Card from "../../components/Card";
 import Select from "../../components/Select";
 import { genders, standards } from "../../components/dictionaries";
 import { TGender, TStandard } from "../../components/types";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { FC, useEffect, useState } from "react";
-import TextInfo from "./TextInfo";
 import { calculate } from "./formulas";
-import {useTranslations} from 'next-intl';
-
 
 const Converter: FC = () => {
+  const t = useTranslations("shoeSizeConverter.converter");
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
     standards[0]
   );
@@ -22,7 +21,6 @@ const Converter: FC = () => {
   const [gender, setGender] = useState<TGender>(genders[0]);
   const [result, setResult] = useState("");
   const [size, setSize] = useState<null | number>(null);
-  const t = useTranslations('shoeSizeConverter');
 
   useEffect(() => {
     setResult(
@@ -37,7 +35,7 @@ const Converter: FC = () => {
 
   return (
     <>
-      <Card title={t('title')}>
+      <Card title={t("title")}>
         <>
           <Box
             alignItems="center"
@@ -53,7 +51,7 @@ const Converter: FC = () => {
               flexWrap="wrap"
               justifyContent="center"
             >
-              <Box>Сonvert from</Box>
+              <Box>{t("from")}</Box>
               <Box
                 display="flex"
                 gap="10px"
@@ -77,7 +75,7 @@ const Converter: FC = () => {
               </Box>
             </Box>
             <Box display="flex" alignItems="center" gap="10px">
-              <Box>to</Box>
+              <Box>{t("to")}</Box>
               <Select
                 type="standardExpected"
                 onChange={setExpectedStandard}
@@ -101,7 +99,6 @@ const Converter: FC = () => {
           </Box>
         </>
       </Card>
-      {/* <TextInfo text={text} /> */}
     </>
   );
 };

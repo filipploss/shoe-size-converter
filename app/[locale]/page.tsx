@@ -27,6 +27,7 @@ export default function Home({
 }) {
   const t = useTranslations("home");
   const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
+
   const text = t.rich("text", {
     h1: (chunks) => (
         <Typography
@@ -55,6 +56,7 @@ export default function Home({
       </Link>
     ),
   });
+
 
   return (
     <main className={styles.main}>
