@@ -28,6 +28,17 @@ export default function Home({
   const t = useTranslations("home");
 
   const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
+
+  const text2p1 = t.rich("text2.p1", {
+    Link: (chunks) => (
+      <Link
+        href={`${localePath}shoe-size/converter`}
+        style={{ textDecoration: "underline" }}
+      >
+        {chunks}
+      </Link>
+    ),
+  });
   return (
     <main className={styles.main}>
       <Box maxWidth="700px">
@@ -46,13 +57,7 @@ export default function Home({
           {t("text2.title")}
         </Typography>
         <Typography gutterBottom marginBottom="1.5rem">
-          {t("text2.p1")}
-          <Link
-            href={`${localePath}shoe-size/converter`}
-            style={{ textDecoration: "underline" }}
-          >
-            {t("text2.link")}
-          </Link>
+          {text2p1}
           {t("text2.p2")}
         </Typography>
         <Typography variant="h2" gutterBottom>

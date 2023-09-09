@@ -1,11 +1,25 @@
+import { Locale } from "@/i18n.config";
+import { Metadata } from "next";
+import { getTranslator } from "next-intl/server";
 import ShoeSize from "./ShoeSize";
 
-export const metadata = {
-  title: "Discovering Your Perfect Shoe Size: A Comprehensive Guide",
-  description:
-    "Step forward with confidence, knowing you have the perfect shoe size with our guide.",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}): Promise<Metadata> {
+  const t = await getTranslator(locale, "shoeSize.metadata");
 
-export default function Page() {
-  return <ShoeSize />;
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default function Page({
+  params: { locale },
+}: {
+  params: { locale: Locale };
+}) {
+  return <ShoeSize locale={locale} />;
 }

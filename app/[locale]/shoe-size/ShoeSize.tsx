@@ -1,114 +1,75 @@
 import { Box, List, ListItem, Typography } from "@mui/material/";
 import Link from "next/link";
 import { FC } from "react";
-import {useTranslations} from 'next-intl';
+import { useTranslations } from "next-intl";
+import { Locale, i18n } from "@/i18n.config";
 
 interface IProps {
-  // text: any;
+  locale: Locale;
 }
 
-// const ShoeSize: FC<IProps> = async ({ text }) => {
-const ShoeSize: FC<IProps> = () => {
-  // TODO: add i18n link\
-  const t = useTranslations('shoeSize');
-  // const { title, text1, text2, text3, text4, text5, text6 } = text;
+const ShoeSize: FC<IProps> = ({ locale }) => {
+  const t = useTranslations("shoeSize");
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
+
+  const text = t.rich("text", {
+    h1: (chunks) => (
+        <Typography
+          fontSize={30}
+          fontWeight={700}
+          marginBottom="1rem"
+          variant="h1"
+        >
+          {chunks}
+        </Typography>
+    ),
+    h2: (chunks) => (
+      <Typography variant="h2" gutterBottom marginTop="1.5rem">
+        {chunks}
+      </Typography>
+    ),
+    b: (chunks) => <b>{chunks}</b>,
+    br: () => <br />,
+    p: (chunks) => <Typography gutterBottom>{chunks}</Typography>,
+    ul: (chunks) => (
+      <Typography component="div" gutterBottom>
+        <List
+          sx={{
+            listStyleType: "disc",
+            listStylePosition: "inside",
+            pl: 2,
+          }}
+        >
+          {chunks}
+        </List>
+      </Typography>
+    ),
+    ol: (chunks) => (
+      <Typography component="div" gutterBottom>
+        <List
+          sx={{
+            listStyleType: "decimal",
+            listStylePosition: "inside",
+            pl: 2,
+          }}
+        >
+          {chunks}
+        </List>
+      </Typography>
+    ),
+    li: (chunks) => <ListItem sx={{ display: "list-item" }}>{chunks}</ListItem>,
+    Link: (chunks) => (
+      <Link
+        href={`${localePath}shoe-size/converter`}
+        style={{ textDecoration: "underline" }}
+      >
+        {chunks}
+      </Link>
+    ),
+  });
+
   return (
-    <>
-      <Box maxWidth="700px">
-        <Box marginBottom="1.5rem">
-          <Typography
-            fontSize={30}
-            fontWeight={700}
-            marginBottom="1rem"
-            variant="h1"
-          >
-             {t('title')}
-          </Typography>
-          <Typography gutterBottom>{t('text1.p1')}</Typography>
-        </Box>
-        <Box marginBottom="1.5rem">
-          <Typography variant="h2" gutterBottom>
-            {/* {text2.title} */}
-          </Typography>
-          {/* <Typography gutterBottom>{text2.p1}</Typography> */}
-          {/* <Typography component="div" gutterBottom>
-            <List
-              sx={{
-                listStyleType: "disc",
-                listStylePosition: "inside",
-                pl: 2,
-              }}
-            >
-              <ListItem sx={{ display: "list-item" }}>
-                {<b>{text2.l1p1}</b>}
-                {text2.l1p2}
-              </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
-                {<b>{text2.l2p1}</b>}
-                {text2.l2p2}
-              </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
-                {<b>{text2.l3p1}</b>}
-                {text2.l3p2}
-                <Link
-                  href={`/shoe-size/converter`}
-                  style={{ textDecoration: "underline" }}
-                >
-                  shoe size converter
-                </Link>
-                {text2.l3p3}
-              </ListItem>
-            </List>
-          </Typography> */}
-        </Box>
-        <Box marginBottom="1.5rem">
-          {/* <Typography variant="h2" gutterBottom>
-            {text3.title}
-          </Typography>
-          <Typography gutterBottom>{text3.p1}</Typography>
-          <Typography gutterBottom>{text3.p2}</Typography> */}
-        </Box>
-        {/* <Typography component="div" gutterBottom>
-          <List
-            sx={{
-              listStyleType: "decimal",
-              listStylePosition: "inside",
-              pl: 2,
-            }}
-          >
-            <ListItem sx={{ display: "list-item" }}>
-              {<b>{text4.l1p1}</b>}
-              {text4.l1p2}
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              {<b>{text4.l2p1}</b>}
-              {text4.l2p2}
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              {<b>{text4.l3p1}</b>}
-              {text4.l3p2}
-            </ListItem>
-            <ListItem sx={{ display: "list-item" }}>
-              {<b>{text4.l4p1}</b>}
-              {text4.l4p2}
-              <Link
-                href={`/shoe-size/converter`}
-                style={{ textDecoration: "underline" }}
-              >
-                shoe size calculator
-              </Link>
-              {text4.l4p3}
-            </ListItem>
-          </List>
-        </Typography> */}
-        {/* <Box marginBottom="1.5rem">
-          <Typography variant="h2" gutterBottom>
-            {text5.title}
-          </Typography>
-          <Typography gutterBottom>{text5.p1}</Typography>
-        </Box> */}
-      </Box>
-    </>
+    <Box maxWidth="700px">{text}</Box>
   );
 };
 
