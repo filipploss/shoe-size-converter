@@ -26,10 +26,26 @@ export default function Home({
   params: { locale: Locale };
 }) {
   const t = useTranslations("home");
-
   const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
-
-  const text2p1 = t.rich("text2.p1", {
+  const text = t.rich("text", {
+    h1: (chunks) => (
+        <Typography
+          fontSize={30}
+          fontWeight={700}
+          marginBottom="1rem"
+          variant="h1"
+        >
+          {chunks}
+        </Typography>
+    ),
+    h2: (chunks) => (
+      <Typography variant="h2" gutterBottom marginTop="1.5rem">
+        {chunks}
+      </Typography>
+    ),
+    b: (chunks) => <b>{chunks}</b>,
+    br: () => <br />,
+    p: (chunks) => <Typography gutterBottom>{chunks}</Typography>,
     Link: (chunks) => (
       <Link
         href={`${localePath}shoe-size/converter`}
@@ -39,39 +55,11 @@ export default function Home({
       </Link>
     ),
   });
+
   return (
     <main className={styles.main}>
       <Box maxWidth="700px">
-        <Typography
-          fontSize={30}
-          fontWeight={700}
-          marginBottom="1rem"
-          variant="h1"
-        >
-          {t("title")}
-        </Typography>
-        <Typography gutterBottom marginBottom="1.5rem">
-          {t("text1")}
-        </Typography>
-        <Typography variant="h2" gutterBottom>
-          {t("text2.title")}
-        </Typography>
-        <Typography gutterBottom marginBottom="1.5rem">
-          {text2p1}
-          {t("text2.p2")}
-        </Typography>
-        <Typography variant="h2" gutterBottom>
-          {t("text3.title")}
-        </Typography>
-        <Typography gutterBottom marginBottom="1.5rem">
-          {t("text3.p1")}
-        </Typography>
-        <Typography variant="h2" gutterBottom>
-          {t("text4.title")}
-        </Typography>
-        <Typography gutterBottom marginBottom="1.5rem">
-          {t("text4.p1")}
-        </Typography>
+        {text}
       </Box>
     </main>
   );
