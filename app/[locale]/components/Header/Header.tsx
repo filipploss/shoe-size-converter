@@ -19,9 +19,11 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function Header({ locale }: { locale: Locale }) {
+  const t = useTranslations("header");
   const { defaultLocale } = i18n;
   const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
   const router = useRouter();
@@ -124,7 +126,7 @@ export default function Header({ locale }: { locale: Locale }) {
                             router.push(`/${locale}/shoe-size/converter`);
                           }}
                         >
-                          Shoe size converter
+                          {t("shoeSizeConverter")}
                         </MenuItem>
                       </MenuList>
                     </ClickAwayListener>
@@ -176,7 +178,7 @@ export default function Header({ locale }: { locale: Locale }) {
               variant="text"
               sx={{ color: "#fff", fontSize: 14 }}
             >
-              Catalog
+              {t("catalog")}
             </Button>
             <Popper
               open={open}
@@ -207,7 +209,7 @@ export default function Header({ locale }: { locale: Locale }) {
                             router.push(`/${locale}/shoe-size/converter`);
                           }}
                         >
-                          Shoe size converter
+                          {t("shoeSizeConverter")}
                         </MenuItem>
                       </MenuList>
                     </ClickAwayListener>
@@ -216,7 +218,6 @@ export default function Header({ locale }: { locale: Locale }) {
               )}
             </Popper>
           </Box>
-          {/* check */}
           <LanguageSwitcher locale={locale} />
         </Toolbar>
       </Container>

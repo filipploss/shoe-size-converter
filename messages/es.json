@@ -1,4 +1,13 @@
 {
+  "header": {
+    "shoeSizeConverter": "Conversor de tallas de zapatos",
+    "catalog": "Catálogo"
+  },
+  "breadcrumbs": {
+    "Home": "Inicio",
+    "Shoe size": "Talla de zapato",
+    "Converter": "Conversor"
+  },
   "home": {
     "metadata": {
       "title": "Convierte con Exactitud: Nuestros Top Convertidores",

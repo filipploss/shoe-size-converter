@@ -1,4 +1,13 @@
 {
+    "header": {
+      "shoeSizeConverter": "Shoe size converter",
+      "catalog": "Catalog"
+    },
+    "breadcrumbs": {
+      "Home": "Home",
+      "Shoe size": "Shoe size",
+      "Converter": "Converter"
+    },
   "home": {
     "metadata": {
       "title": "Convert Like an Expert",
