@@ -1,10 +1,10 @@
 "use client";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
-import Crumb from "./components/Crumb";
 import { i18n, Locale } from "@/i18n.config";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
+import Crumb from "./components/Crumb";
 
 export default function BasicBreadcrumbs({ locale }: { locale: Locale }) {
   const t = useTranslations("breadcrumbs");
@@ -27,7 +27,7 @@ export default function BasicBreadcrumbs({ locale }: { locale: Locale }) {
       return { href, text: t(pathToText(subpath)) };
     });
 
-    return [{ href: localePath, text: t("Home") }, ...crumblist];
+    return [{ href: "/", text: t("Home") }, ...crumblist];
   }, [pathname, locales, localePath, t]);
 
   if (

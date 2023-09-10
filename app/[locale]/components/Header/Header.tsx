@@ -1,6 +1,6 @@
 "use client";
 
-import { Locale, i18n } from "@/i18n.config";
+import { Locale } from "@/i18n.config";
 import MenuIcon from "@mui/icons-material/Menu";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import AppBar from "@mui/material/AppBar";
@@ -16,16 +16,14 @@ import Paper from "@mui/material/Paper";
 import Popper from "@mui/material/Popper";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
-import { useTranslations } from "next-intl";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function Header({ locale }: { locale: Locale }) {
   const t = useTranslations("header");
-  const { defaultLocale } = i18n;
-  const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const handleToggle = () => {
@@ -60,7 +58,7 @@ export default function Header({ locale }: { locale: Locale }) {
         <Toolbar disableGutters>
           <Link
             color="inherit"
-            href={localePath}
+            href="/"
             style={{
               display: "flex",
               alignItems: "center",
@@ -138,7 +136,7 @@ export default function Header({ locale }: { locale: Locale }) {
           <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
             <Link
               color="inherit"
-              href={localePath}
+              href="/"
               style={{
                 alignItems: "center",
                 display: "flex",
