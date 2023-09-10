@@ -26,7 +26,6 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* TODO: remove meta ahrefs */}
         <meta
           name="ahrefs-site-verification"
           content="b011a322cec79e0cc16b984f3bb4641c2c98e9d8391da6951953057d918223d6"
