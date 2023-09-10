@@ -30,14 +30,14 @@ export default function Home({
 
   const text = t.rich("text", {
     h1: (chunks) => (
-        <Typography
-          fontSize={30}
-          fontWeight={700}
-          marginBottom="1rem"
-          variant="h1"
-        >
-          {chunks}
-        </Typography>
+      <Typography
+        fontSize={30}
+        fontWeight={700}
+        marginBottom="1rem"
+        variant="h1"
+      >
+        {chunks}
+      </Typography>
     ),
     h2: (chunks) => (
       <Typography variant="h2" gutterBottom marginTop="1.5rem">
@@ -49,7 +49,7 @@ export default function Home({
     p: (chunks) => <Typography gutterBottom>{chunks}</Typography>,
     Link: (chunks) => (
       <Link
-        href={`${localePath}shoe-size/converter`}
+        href={`${localePath}` + t("shoeSizeConverterLink")}
         style={{ textDecoration: "underline" }}
       >
         {chunks}
@@ -57,12 +57,9 @@ export default function Home({
     ),
   });
 
-
   return (
     <main className={styles.main}>
-      <Box maxWidth="700px">
-        {text}
-      </Box>
+      <Box maxWidth="700px">{text}</Box>
     </main>
   );
 }

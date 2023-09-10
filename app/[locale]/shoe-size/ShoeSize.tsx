@@ -14,14 +14,14 @@ const ShoeSize: FC<IProps> = ({ locale }) => {
 
   const text = t.rich("text", {
     h1: (chunks) => (
-        <Typography
-          fontSize={30}
-          fontWeight={700}
-          marginBottom="1rem"
-          variant="h1"
-        >
-          {chunks}
-        </Typography>
+      <Typography
+        fontSize={30}
+        fontWeight={700}
+        marginBottom="1rem"
+        variant="h1"
+      >
+        {chunks}
+      </Typography>
     ),
     h2: (chunks) => (
       <Typography variant="h2" gutterBottom marginTop="1.5rem">
@@ -60,7 +60,7 @@ const ShoeSize: FC<IProps> = ({ locale }) => {
     li: (chunks) => <ListItem sx={{ display: "list-item" }}>{chunks}</ListItem>,
     Link: (chunks) => (
       <Link
-        href={`${localePath}shoe-size/converter`}
+        href={`${localePath}` + t("shoeSizeConverterLink")}
         style={{ textDecoration: "underline" }}
       >
         {chunks}
@@ -68,9 +68,7 @@ const ShoeSize: FC<IProps> = ({ locale }) => {
     ),
   });
 
-  return (
-    <Box maxWidth="700px">{text}</Box>
-  );
+  return <Box maxWidth="700px">{text}</Box>;
 };
 
 export default ShoeSize;

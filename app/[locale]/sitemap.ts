@@ -3,10 +3,6 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://convertxpert.com";
   return [
-    // {
-    //   url: baseUrl,
-    //   lastModified: new Date(),
-    // },
     {
       url: `${baseUrl}`,
       lastModified: new Date(),
@@ -24,11 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/es/shoe-size`,
+      url: `${baseUrl}/es/talla-de-zapato`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/es/shoe-size/converter`,
+      url: `${baseUrl}/es/talla-de-zapato/conversor`,
       lastModified: new Date(),
     },
   ];

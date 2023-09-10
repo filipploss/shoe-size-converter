@@ -43,7 +43,7 @@ export default function Page({
     h2: (chunks) => (
       <Typography
         sx={{
-          "&:first-child": {
+          "&:first-of-type": {
             marginTop: 0,
           },
           marginTop: "1.5rem",
