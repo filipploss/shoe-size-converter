@@ -1,5 +1,7 @@
+import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import { NextIntlClientProvider } from "next-intl";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import Breadcrumbs from "./components/Breadcrumbs";
@@ -7,12 +9,14 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./globals.css";
 import ThemeProvider from "./theme-provider";
-import { headers } from "next/headers";
 
 export default async function RootLayout({
   children,
   params: { locale },
-}: any) {
+}: {
+  children: React.ReactNode;
+  params: { locale: Locale };
+}) {
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
