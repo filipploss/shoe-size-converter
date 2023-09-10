@@ -22,10 +22,14 @@ export default async function RootLayout({
 
   const headersList = headers();
   const isProd = headersList.get("host").includes("convertxpert");
-  
+
   return (
     <html lang={locale}>
       <head>
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
         <meta
           name="ahrefs-site-verification"
           content="b011a322cec79e0cc16b984f3bb4641c2c98e9d8391da6951953057d918223d6"
