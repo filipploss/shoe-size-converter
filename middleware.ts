@@ -36,6 +36,6 @@ export const config = {
   // folders "api", "_next" and all files with an extension (e.g. favicon.ico)
   //   matcher: ['/((?!api|_next|.*\\..*).*)']
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|apple-touch-icon.png).*)",
   ],
 };
