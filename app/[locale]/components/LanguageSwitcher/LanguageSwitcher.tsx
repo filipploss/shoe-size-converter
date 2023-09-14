@@ -1,4 +1,3 @@
-"use client";
 import { i18n, Locale } from "@/i18n.config";
 import { Autocomplete, TextField } from "@mui/material";
 import { usePathname, useRouter } from "next/navigation";

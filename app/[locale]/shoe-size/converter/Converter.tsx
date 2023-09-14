@@ -11,63 +11,34 @@ import { genders, standards } from "../../components/dictionaries";
 import { TGender, TStandard } from "../../components/types";
 import { calculate } from "./formulas";
 
-const Converter: FC = ({ locale }: { locale: Locale }) => {
+type Props = {
+  locale: Locale;
+};
+
+const Converter: FC<Props> = ({ locale }) => {
   const t = useTranslations("shoeSizeConverter.converter");
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
-    standards[`${locale}`].us
+    standards[`${locale}`][0]
   );
   const [expectedStandard, setExpectedStandard] = useState<TStandard>(
-    standards[`${locale}`].eu
+    standards[`${locale}`][1]
   );
 
-  function getObjectKey(obj, value: string) {
-    // console.log("getObj value", value);
-    // // console.log("getObj value.toLowerCase()", value);
-    return Object.keys(obj).find((key) => obj[key] === value);
-  }
-  const [gender, setGender] = useState<TGender>(genders[`${locale}`].men);
+  const [gender, setGender] = useState<TGender>(genders[`${locale}`][0]);
 
-  const genderResult = getObjectKey(genders[`${locale}`], gender);
-  const currentStandardResult = getObjectKey(
-    standards[`${locale}`],
-    currentStandard
-  );
-  const currentExpectedStandard = getObjectKey(
-    standards[`${locale}`],
-    expectedStandard
-  );
   const [result, setResult] = useState("");
   const [size, setSize] = useState<null | number>(null);
-  console.log("state gender", gender);
-  console.log("genderResult", genderResult);
+
   useEffect(() => {
-    // console.log(
-    //   calculate({
-    //     currentStandard: currentStandardResult,
-    //     expectedStandard: currentExpectedStandard,
-    //     // gender,
-    //     gender: genderResult,
-    //     // getObjectKey(genders[`${locale}`], gender)
-    //     size,
-    //   })
-    // );
     setResult(
       calculate({
-        currentStandard: currentStandardResult,
-        expectedStandard: currentExpectedStandard,
-        // gender,
-        gender: genderResult,
-        // getObjectKey(genders[`${locale}`], gender)
+        currentStandard,
+        expectedStandard,
+        gender,
         size,
       })
     );
-  }, [
-    currentStandardResult,
-    currentExpectedStandard,
-    gender,
-    size,
-    genderResult,
-  ]);
+  }, [currentStandard, expectedStandard, gender, size]);
 
   return (
     <>

@@ -1,27 +1,36 @@
-export const genders: any = {
-  en: { men: "Men", women: "Women", children: "Children" },
-  es: { men: "Hombres", women: "Mujeres", children: "Niños" },
+export const genders = {
+  en: [
+    { option: "men", label: "Men" },
+    { option: "women", label: "Women" },
+    { option: "children", label: "Children" },
+  ],
+  es: [
+    { option: "men", label: "Hombres" },
+    { option: "women", label: "Mujeres" },
+    { option: "children", label: "Niños" },
+  ],
+
 };
 
-export const standards: any = {
-  en: {
-    us: "US",
-    eu: "EU",
-    uk: "UK",
-    au: "AU",
-    br: "BR",
-    mx: "MX",
-    cm: "cm",
-    inches: "inches",
-  },
-  es: {
-    us: "US",
-    eu: "EU",
-    uk: "UK",
-    au: "AU",
-    br: "BR",
-    mx: "MX",
-    cm: "cm",
-    inches: "pulgadas",
-  },
+export const standards = {
+  en: [
+    { option: "us", label: "US" },
+    { option: "eu", label: "EU" },
+    { option: "uk", label: "UK" },
+    { option: "au", label: "AU" },
+    { option: "br", label: "BR" },
+    { option: "mx", label: "MX" },
+    { option: "cm", label: "cm" },
+    { option: "inches", label: "inches" },
+  ],
+  es: [
+    { option: "us", label: "US" },
+    { option: "eu", label: "EU" },
+    { option: "uk", label: "UK" },
+    { option: "au", label: "AU" },
+    { option: "br", label: "BR" },
+    { option: "mx", label: "MX" },
+    { option: "cm", label: "cm" },
+    { option: "inches", label: "pulgadas" },
+  ],
 };

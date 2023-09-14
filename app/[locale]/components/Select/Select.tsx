@@ -1,5 +1,3 @@
-"use client";
-
 import { Locale } from "@/i18n.config";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
@@ -17,11 +15,10 @@ type Props = {
 const Select: FC<Props> = ({ onChange, type, locale }) => {
   const defaultValue =
     type === "standardCurrent"
-      ? standards[`${locale}`].us
+      ? standards[`${locale}`][0]
       : type === "standardExpected"
-      ? standards[`${locale}`].eu
-      : genders[`${locale}`].men;
-
+      ? standards[`${locale}`][1]
+      : genders[`${locale}`][0];
   return (
     <Autocomplete
       id="select"
@@ -35,12 +32,11 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
       autoHighlight
       disableClearable
       onChange={(e, value) => {
-        console.log("value", value);
         onChange(value);
       }}
-      // getOptionLabel={(option) => {
-      //   return option.label;
-      // }}
+      getOptionLabel={(option) => {
+        return option.label;
+      }}
       renderOption={(props, option) => (
         <Box
           component="li"
@@ -57,14 +53,13 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
           {/* {((type === "gender" || ["cm", "inches"].includes(option)) &&
             option) ||
             option.toUpperCase()} */}
-          {option}
+          {option.label}
         </Box>
       )}
       renderInput={(params) => {
         return (
           <TextField
             {...params}
-            // label="Choose a standard"
             variant="standard"
             sx={{ textAlign: "center" }}
             inputProps={{

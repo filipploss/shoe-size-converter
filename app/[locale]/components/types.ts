@@ -1,14 +1,5 @@
-export type TStandard =
-  | "us"
-  | "eu"
-  | "uk"
-  | "au"
-  | "br"
-  | "mx"
-  | "cm"
-  | "inches";
-
-export type TGender = "men" | "women" | "children";
+export type TStandard = { option: string; label: string };
+export type TGender = { option: string; label: string };
 
 export interface ICalculate {
   currentStandard: TStandard;
@@ -17,11 +8,9 @@ export interface ICalculate {
   size: null | number;
 }
 
-
 export interface IResult {
   size: string | number;
   system: string;
   women: boolean;
   children: boolean;
-  
 }

@@ -10,21 +10,20 @@ export const calculate = ({
 }: ICalculate) => {
   const result = convert(
     {
-      size: currentStandard === "inches" ? size * 25.4 : size,
-      system: currentStandard === "inches" ? "mondopoint" : currentStandard,
-      women: gender === "women",
-      children: gender === "children",
+      size: currentStandard.option === "inches" ? size * 25.4 : size,
+      system: currentStandard.option === "inches" ? "mondopoint" : currentStandard.option,
+      women: gender.option === "women",
+      children: gender.option === "children",
     },
     iso
   );
-  console.log("result", result);
-  console.log("expectedStandard", expectedStandard);
-  if (expectedStandard === "inches") {
+
+  if (expectedStandard.option === "inches") {
     return (
       result.find((item: IResult) => item.system === "mondopoint").size / 25.4
     ).toFixed(1);
   } else {
-    return result.find((item: IResult) => item.system === expectedStandard)
+    return result.find((item: IResult) => item.system === expectedStandard.option)
       .size;
   }
 };
