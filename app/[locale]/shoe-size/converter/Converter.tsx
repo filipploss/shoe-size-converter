@@ -1,5 +1,6 @@
 "use client";
 
+import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useTranslations } from "next-intl";
@@ -10,28 +11,63 @@ import { genders, standards } from "../../components/dictionaries";
 import { TGender, TStandard } from "../../components/types";
 import { calculate } from "./formulas";
 
-const Converter: FC = () => {
+const Converter: FC = ({ locale }: { locale: Locale }) => {
   const t = useTranslations("shoeSizeConverter.converter");
   const [currentStandard, setCurrentStandard] = useState<TStandard>(
-    standards[0]
+    standards[`${locale}`].us
   );
   const [expectedStandard, setExpectedStandard] = useState<TStandard>(
-    standards[1]
+    standards[`${locale}`].eu
   );
-  const [gender, setGender] = useState<TGender>(genders[0]);
+
+  function getObjectKey(obj, value: string) {
+    // console.log("getObj value", value);
+    // // console.log("getObj value.toLowerCase()", value);
+    return Object.keys(obj).find((key) => obj[key] === value);
+  }
+  const [gender, setGender] = useState<TGender>(genders[`${locale}`].men);
+
+  const genderResult = getObjectKey(genders[`${locale}`], gender);
+  const currentStandardResult = getObjectKey(
+    standards[`${locale}`],
+    currentStandard
+  );
+  const currentExpectedStandard = getObjectKey(
+    standards[`${locale}`],
+    expectedStandard
+  );
   const [result, setResult] = useState("");
   const [size, setSize] = useState<null | number>(null);
-
+  console.log("state gender", gender);
+  console.log("genderResult", genderResult);
   useEffect(() => {
+    // console.log(
+    //   calculate({
+    //     currentStandard: currentStandardResult,
+    //     expectedStandard: currentExpectedStandard,
+    //     // gender,
+    //     gender: genderResult,
+    //     // getObjectKey(genders[`${locale}`], gender)
+    //     size,
+    //   })
+    // );
     setResult(
       calculate({
-        currentStandard,
-        expectedStandard,
-        gender,
+        currentStandard: currentStandardResult,
+        expectedStandard: currentExpectedStandard,
+        // gender,
+        gender: genderResult,
+        // getObjectKey(genders[`${locale}`], gender)
         size,
       })
     );
-  }, [currentStandard, expectedStandard, gender, size]);
+  }, [
+    currentStandardResult,
+    currentExpectedStandard,
+    gender,
+    size,
+    genderResult,
+  ]);
 
   return (
     <>
@@ -70,8 +106,12 @@ const Converter: FC = () => {
                     style: { textAlign: "center" },
                   }}
                 />
-                <Select type="standardCurrent" onChange={setCurrentStandard} />
-                <Select type="gender" onChange={setGender} />
+                <Select
+                  type="standardCurrent"
+                  onChange={setCurrentStandard}
+                  locale={locale}
+                />
+                <Select type="gender" onChange={setGender} locale={locale} />
               </Box>
             </Box>
             <Box display="flex" alignItems="center" gap="10px">
@@ -79,6 +119,7 @@ const Converter: FC = () => {
               <Select
                 type="standardExpected"
                 onChange={setExpectedStandard}
+                locale={locale}
               />{" "}
               =
               <TextField

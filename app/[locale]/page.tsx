@@ -28,6 +28,7 @@ export default function Home({
   const t = useTranslations("home");
   const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
 
+  // TODO: move this component definition out of the parent component
   const text = t.rich("text", {
     h1: (chunks) => (
       <Typography

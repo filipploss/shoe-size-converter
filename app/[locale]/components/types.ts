@@ -8,7 +8,7 @@ export type TStandard =
   | "cm"
   | "inches";
 
-export type TGender = "Men" | "Women" | "Children";
+export type TGender = "men" | "women" | "children";
 
 export interface ICalculate {
   currentStandard: TStandard;

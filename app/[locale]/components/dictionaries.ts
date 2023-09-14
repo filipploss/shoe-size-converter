@@ -1,18 +1,27 @@
-import { TStandard, TGender } from "./types";
+export const genders: any = {
+  en: { men: "Men", women: "Women", children: "Children" },
+  es: { men: "Hombres", women: "Mujeres", children: "Niños" },
+};
 
-export const standards: TStandard[] = [
-  "us",
-  "eu",
-  "uk",
-  "au",
-  "br",
-  "mx",
-  "cm",
-  "inches",
-];
-
-export const genders: TGender[] = [
-  "Men",
-  "Women",
-  "Children",
-];
+export const standards: any = {
+  en: {
+    us: "US",
+    eu: "EU",
+    uk: "UK",
+    au: "AU",
+    br: "BR",
+    mx: "MX",
+    cm: "cm",
+    inches: "inches",
+  },
+  es: {
+    us: "US",
+    eu: "EU",
+    uk: "UK",
+    au: "AU",
+    br: "BR",
+    mx: "MX",
+    cm: "cm",
+    inches: "pulgadas",
+  },
+};

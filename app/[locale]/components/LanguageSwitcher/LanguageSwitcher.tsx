@@ -12,13 +12,9 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
     if (!pathName) return "/";
     const segments = pathName.split("/");
 
-    // if (segments[1] === locale) return pathName;
-    // если segment[1] не один из Locale, вставить после [0] locale
-
     locales.includes(segments[1] as Locale)
       ? (segments[1] = locale)
       : segments.splice(1, 0, locale);
-    // if (!pathName) return "/";
     return segments.join("/");
   };
 
@@ -30,12 +26,12 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
       disableClearable
       id="language-switcher"
       options={i18n.locales}
-      size="small"
+      sx={{ width: "110px" }}
       onChange={(e, value) => {
         router.push(redirectedPathName(value));
       }}
       renderInput={(params) => {
-        return <TextField {...params} label="Language" />;
+        return <TextField {...params} label="Language" size="small" />;
       }}
     />
   );

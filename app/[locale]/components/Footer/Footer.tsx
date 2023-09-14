@@ -1,12 +1,14 @@
+"use client";
+import { Locale } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import { Locale, i18n } from "@/i18n.config";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function StickyFooter({ locale }: { locale: Locale }) {
-  const { locales, defaultLocale } = i18n;
-  const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
+  const isMobile = useMediaQuery("(max-width:375px)");
   return (
     <Box
       component="footer"
@@ -20,7 +22,11 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         //     : theme.palette.grey[800],
       }}
     >
-      <Container maxWidth="sm">
+      <Container
+        maxWidth="sm"
+        sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+      >
+        {isMobile && <LanguageSwitcher locale={locale} />}
         <Typography variant="body2" color="text.secondary">
           {"Copyright © "}
           <Link color="inherit" href={`https://convertxpert.com`}>

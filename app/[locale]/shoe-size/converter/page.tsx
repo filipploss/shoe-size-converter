@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 
-
 export async function generateMetadata({
   params: { locale },
 }: {
@@ -68,7 +67,7 @@ export default function Page({
   });
   return (
     <>
-      <Converter />
+      <Converter locale={locale} />
       <Box maxWidth="700px"> {text}</Box>
     </>
   );

@@ -1,37 +1,43 @@
 "use client";
 
-import React, { FC, Dispatch, SetStateAction } from "react";
+import { Locale } from "@/i18n.config";
+import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import { standards, genders } from "../dictionaries";
-import { TStandard, TGender } from "../types";
+import { Dispatch, FC, SetStateAction } from "react";
+import { genders, standards } from "../dictionaries";
+import { TGender, TStandard } from "../types";
 
 type Props = {
-  type: "standardCurrent" | "standardExpected" | "gender";
+  locale: Locale;
   onChange?: Dispatch<SetStateAction<TStandard | TGender>>;
+  type: "standardCurrent" | "standardExpected" | "gender";
 };
 
-const Select: FC<Props> = ({ onChange, type }) => {
-  const defaultValue = type === "standardCurrent"
-  ? standards[0]
-  : type === "standardExpected"
-  ? standards[1]
-  : genders[0]
-  
+const Select: FC<Props> = ({ onChange, type, locale }) => {
+  const defaultValue =
+    type === "standardCurrent"
+      ? standards[`${locale}`].us
+      : type === "standardExpected"
+      ? standards[`${locale}`].eu
+      : genders[`${locale}`].men;
+
   return (
     <Autocomplete
       id="select"
       sx={{ width: 100 }}
       options={
         ["standardCurrent", "standardExpected"].includes(type)
-          ? standards
-          : genders
+          ? Object.values(standards[`${locale}`])
+          : Object.values(genders[`${locale}`])
       }
       defaultValue={defaultValue}
       autoHighlight
       disableClearable
-      onChange={(e, value) => onChange(value)}
+      onChange={(e, value) => {
+        console.log("value", value);
+        onChange(value);
+      }}
       // getOptionLabel={(option) => {
       //   return option.label;
       // }}
@@ -48,9 +54,10 @@ const Select: FC<Props> = ({ onChange, type }) => {
           srcSet={`https://flagcdn.com/w40/${option.code.toLowerCase()}.png 2x`}
           alt=""
         /> */}
-          {((type === "gender" || ["cm", "inches"].includes(option)) &&
+          {/* {((type === "gender" || ["cm", "inches"].includes(option)) &&
             option) ||
-            option.toUpperCase()}
+            option.toUpperCase()} */}
+          {option}
         </Box>
       )}
       renderInput={(params) => {

@@ -12,12 +12,13 @@ export const calculate = ({
     {
       size: currentStandard === "inches" ? size * 25.4 : size,
       system: currentStandard === "inches" ? "mondopoint" : currentStandard,
-      women: gender === "Women",
-      children: gender === "Children",
+      women: gender === "women",
+      children: gender === "children",
     },
     iso
   );
-
+  console.log("result", result);
+  console.log("expectedStandard", expectedStandard);
   if (expectedStandard === "inches") {
     return (
       result.find((item: IResult) => item.system === "mondopoint").size / 25.4

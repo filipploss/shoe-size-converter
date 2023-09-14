@@ -21,11 +21,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Header({ locale }: { locale: Locale }) {
   const t = useTranslations("header");
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
+  const isWideScreen = useMediaQuery('(min-width:375px)');
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -216,7 +218,7 @@ export default function Header({ locale }: { locale: Locale }) {
               )}
             </Popper>
           </Box>
-          <LanguageSwitcher locale={locale} />
+          {isWideScreen && <LanguageSwitcher locale={locale} />}
         </Toolbar>
       </Container>
     </AppBar>
