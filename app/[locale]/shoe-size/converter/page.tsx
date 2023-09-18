@@ -56,6 +56,7 @@ export default function Page({
     b: (chunks) => <b>{chunks}</b>,
     br: () => <br />,
     p: (chunks) => <Typography gutterBottom>{chunks}</Typography>,
+    strong: (chunks) => <strong>{chunks}</strong>,
     Link: (chunks) => (
       <Link
         href={`${localePath}shoe-size/converter`}
