@@ -66,6 +66,7 @@ const Converter: FC<Props> = ({ locale }) => {
                 justifyContent="center"
               >
                 <TextField
+                  id="convert_from"
                   onChange={(e) => setSize(Number(e.target.value))}
                   sx={{ width: "80px" }}
                   type="number"

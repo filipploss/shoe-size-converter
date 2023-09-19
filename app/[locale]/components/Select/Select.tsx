@@ -21,7 +21,7 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
       : genders[`${locale}`][0];
   return (
     <Autocomplete
-      id="select"
+      id={type}
       sx={{ width: 100 }}
       options={
         ["standardCurrent", "standardExpected"].includes(type)
