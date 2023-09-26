@@ -69,7 +69,7 @@ export default function Header({ locale }: { locale: Locale }) {
           >
             <SyncAltIcon
               sx={{
-                color: "#ff704c",
+                color: "info.main",
                 display: { xs: "none", md: "flex" },
                 mr: 1,
               }}
@@ -99,7 +99,7 @@ export default function Header({ locale }: { locale: Locale }) {
               aria-haspopup="true"
               ref={anchorRef}
               onClick={handleToggle}
-              color="inherit"
+              color="primary"
             >
               <MenuIcon />
             </IconButton>
@@ -144,7 +144,7 @@ export default function Header({ locale }: { locale: Locale }) {
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
             <Link
-              color="inherit"
+              color="primary"
               href="/"
               style={{
                 alignItems: "center",
@@ -154,19 +154,23 @@ export default function Header({ locale }: { locale: Locale }) {
               }}
             >
               <SyncAltIcon
-                sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+                sx={{
+                  color: "info.main",
+                  display: { xs: "flex", md: "none" },
+                  mr: 1,
+                }}
               />
               <Typography
                 variant="h6"
                 noWrap
                 component="p"
+                color="primary"
                 sx={{
                   mr: 2,
                   display: { xs: "flex", md: "none" },
                   fontFamily: "monospace",
                   fontWeight: 700,
                   letterSpacing: ".1rem",
-                  color: "inherit",
                   textDecoration: "none",
                 }}
               >
