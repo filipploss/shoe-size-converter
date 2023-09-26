@@ -62,9 +62,6 @@ export default function Page({
         href={`${localePath}shoe-size/converter`}
         style={{
           textDecoration: "underline",
-          // "&::hover": {
-          //   color: "secondary.main",
-          // },
         }}
       >
         {chunks}
