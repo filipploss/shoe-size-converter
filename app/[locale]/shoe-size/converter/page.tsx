@@ -60,7 +60,9 @@ export default function Page({
     Link: (chunks) => (
       <Link
         href={`${localePath}shoe-size/converter`}
-        style={{ textDecoration: "underline" }}
+        style={{
+          textDecoration: "underline",
+        }}
       >
         {chunks}
       </Link>

@@ -21,22 +21,19 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import LanguageSwitcher from "../LanguageSwitcher";
-import useMediaQuery from '@mui/material/useMediaQuery';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Header({ locale }: { locale: Locale }) {
   const t = useTranslations("header");
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
-  const isWideScreen = useMediaQuery('(min-width:375px)');
+  const isWideScreen = useMediaQuery("(min-width:375px)");
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
 
   const handleClose = (event: Event | React.SyntheticEvent) => {
-    if (
-      anchorRef.current &&
-      anchorRef.current.contains(event.target as HTMLElement)
-    ) {
+    if (anchorRef?.current?.contains(event.target as HTMLElement)) {
       return;
     }
 
@@ -55,7 +52,11 @@ export default function Header({ locale }: { locale: Locale }) {
   const anchorRef = React.useRef<HTMLButtonElement>(null);
   // TODO: Create popup menu separate compornent
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      color="primary"
+      sx={{ backgroundColor: "#f8f8f7" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link
@@ -66,18 +67,24 @@ export default function Header({ locale }: { locale: Locale }) {
               alignItems: "center",
             }}
           >
-            <SyncAltIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <SyncAltIcon
+              sx={{
+                color: "#ff704c",
+                display: { xs: "none", md: "flex" },
+                mr: 1,
+              }}
+            />
             <Typography
               variant="h5"
               noWrap
               component="p"
+              color="primary"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".2rem",
-                color: "inherit",
                 textDecoration: "none",
               }}
             >
@@ -176,7 +183,13 @@ export default function Header({ locale }: { locale: Locale }) {
               aria-haspopup="true"
               onClick={handleToggle}
               variant="text"
-              sx={{ color: "#fff", fontSize: 14 }}
+              color="primary"
+              sx={{
+                fontSize: 14,
+                "&:hover": {
+                  background: "#F0F0EF",
+                },
+              }}
             >
               {t("catalog")}
             </Button>

@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
         router.push(redirectedPathName(value));
       }}
       renderInput={(params) => {
-        return <TextField {...params} label="Language" size="small" />;
+        return <TextField {...params} label="Language" size="small"/>;
       }}
     />
   );

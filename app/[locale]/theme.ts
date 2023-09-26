@@ -1,6 +1,18 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#293D51",
+    },
+    secondary: {
+      main: "#7C4F97",
+      light: "#ff704c",
+    },
+    info: {
+      main: "#ff704c",
+    },
+  },
   typography: {
     fontFamily: [
       "Roboto",
@@ -12,7 +24,7 @@ export const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(","),
     h1: {
-      fontSize: 24,
+      fontSize: 30,
       fontWeight: 400,
     },
     h2: {

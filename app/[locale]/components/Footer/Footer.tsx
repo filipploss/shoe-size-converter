@@ -16,10 +16,6 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         py: 3,
         px: 2,
         mt: "auto",
-        // backgroundColor: (theme) =>
-        //   theme.palette.mode === "light"
-        //     ? theme.palette.grey[200]
-        //     : theme.palette.grey[800],
       }}
     >
       <Container
@@ -27,9 +23,9 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}
       >
         {isMobile && <LanguageSwitcher locale={locale} />}
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="primary">
           {"Copyright © "}
-          <Link color="inherit" href={`https://convertxpert.com`}>
+          <Link color="primary" href={`https://convertxpert.com`}>
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
