@@ -97,7 +97,8 @@ const Converter: FC<Props> = ({ locale }) => {
               <TextField
                 id="result"
                 value={(size && result) || ""}
-                sx={{ width: "80px" }}
+                color="info"
+                sx={{ width: "80px"}}
                 InputProps={{
                   readOnly: true,
                 }}

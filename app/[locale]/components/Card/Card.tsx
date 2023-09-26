@@ -14,7 +14,9 @@ const Card: FC<Props> = ({ children, title }) => {
       <Paper
         elevation={2}
         sx={{
-          background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
+          // background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
+          // background: "linear-gradient(60deg, #8e24aa, #7C4F97)",
+          bgcolor: 'secondary.main',
           color: "#FFFFFF",
           margin: "-45px 0 50px",
           minHeight: "85px",
