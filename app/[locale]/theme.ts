@@ -7,22 +7,23 @@ export const theme = createTheme({
     },
     secondary: {
       main: "#7C4F97",
-      light: "#ff704c",
     },
     info: {
       main: "#ff704c",
     },
   },
   typography: {
-    fontFamily: [
-      "Roboto",
-      '"Helvetica"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
+    allVariants: {
+      fontFamily: [
+        "Roboto",
+        '"Helvetica"',
+        "Arial",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(","),
+    },
     h1: {
       fontSize: 30,
       fontWeight: 400,

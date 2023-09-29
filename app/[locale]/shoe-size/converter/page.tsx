@@ -67,11 +67,20 @@ export default function Page({
         {chunks}
       </Link>
     ),
+    aISO: (chunks) => (
+      <a
+        target="_blank"
+        href="https://en.wikipedia.org/wiki/Shoe_size#ISO_19407_and_shoe_size_conversion"
+        rel="noopener noreferrer"
+      >
+        {chunks}
+      </a>
+    ),
   });
   return (
     <>
       <Converter locale={locale} />
-      <Box maxWidth="700px"> {text}</Box>
+      <Box maxWidth="700px">{text}</Box>
     </>
   );
 }

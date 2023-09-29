@@ -23,6 +23,7 @@ const Crumb: FC<Props> = ({ text, href, last = false }) => {
       style={{
         textDecoration: "underline",
         fontSize: 14,
+        color: "inherit"
       }}
     >
       {text}

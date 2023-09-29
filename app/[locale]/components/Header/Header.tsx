@@ -63,8 +63,10 @@ export default function Header({ locale }: { locale: Locale }) {
             color="inherit"
             href="/"
             style={{
-              display: "flex",
               alignItems: "center",
+              color: "inherit",
+              display: "flex",
+              textDecoration: "none",
             }}
           >
             <SyncAltIcon
@@ -148,8 +150,10 @@ export default function Header({ locale }: { locale: Locale }) {
               href="/"
               style={{
                 alignItems: "center",
+                color: "inherit",
                 display: "flex",
                 justifyContent: "center",
+                textDecoration: "none",
                 width: "100%",
               }}
             >

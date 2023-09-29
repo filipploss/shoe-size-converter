@@ -63,9 +63,6 @@ const ShoeSize: FC<IProps> = ({ locale }) => {
         href={`${localePath}` + t("shoeSizeConverterLink")}
         style={{
           textDecoration: "underline",
-          // "&:hover": {
-          //   color: "secondary.main"
-          // }
         }}
       >
         {chunks}
