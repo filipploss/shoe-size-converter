@@ -73,6 +73,7 @@ const Converter: FC<Props> = ({ locale }) => {
                   value={size}
                   variant="standard"
                   inputProps={{
+                    "aria-label": 'convertFrom',
                     max: 100,
                     min: 1,
                     style: { textAlign: "center" },
@@ -103,6 +104,7 @@ const Converter: FC<Props> = ({ locale }) => {
                   readOnly: true,
                 }}
                 inputProps={{
+                  "aria-label": 'result',
                   style: {
                     textAlign: "center",
                     fontWeight: 600,
