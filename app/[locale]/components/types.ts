@@ -5,7 +5,7 @@ export interface ICalculate {
   currentStandard: TStandard;
   expectedStandard: TStandard;
   gender: TGender;
-  size: null | number;
+  size: string | number;
 }
 
 export interface IResult {

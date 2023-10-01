@@ -10,7 +10,7 @@ export const calculate = ({
 }: ICalculate) => {
   const result = convert(
     {
-      size: currentStandard.option === "inches" ? size * 25.4 : size,
+      size: currentStandard.option === "inches" ? size || 0 * 25.4 : size,
       system: currentStandard.option === "inches" ? "mondopoint" : currentStandard.option,
       women: gender.option === "women",
       children: gender.option === "children",
