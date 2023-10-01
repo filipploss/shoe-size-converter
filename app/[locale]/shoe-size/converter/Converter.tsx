@@ -27,7 +27,7 @@ const Converter: FC<Props> = ({ locale }) => {
   const [gender, setGender] = useState<TGender>(genders[`${locale}`][0]);
 
   const [result, setResult] = useState("");
-  const [size, setSize] = useState<null | number>(null);
+  const [size, setSize] = useState<string | number>('');
 
   useEffect(() => {
     setResult(

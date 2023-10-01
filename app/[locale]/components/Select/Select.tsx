@@ -41,7 +41,6 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
         <Box
           component="li"
           sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
-          aria-label={option.label}
           {...props}
         >
           {/* <img
@@ -65,6 +64,7 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
             sx={{ textAlign: "center" }}
             inputProps={{
               ...params.inputProps,
+              "aria-label": params.id,
               autoComplete: "new-password",
               style: {
                 textAlign: "center",
