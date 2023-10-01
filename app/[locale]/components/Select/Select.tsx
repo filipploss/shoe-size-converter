@@ -41,6 +41,7 @@ const Select: FC<Props> = ({ onChange, type, locale }) => {
         <Box
           component="li"
           sx={{ "& > img": { mr: 2, flexShrink: 0 } }}
+          aria-label={option.label}
           {...props}
         >
           {/* <img
