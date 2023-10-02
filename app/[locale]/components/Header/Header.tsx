@@ -96,7 +96,7 @@ export default function Header({ locale }: { locale: Locale }) {
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
-              aria-label="Menu"
+              aria-label="Header menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               ref={anchorRef}
