@@ -8,7 +8,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function StickyFooter({ locale }: { locale: Locale }) {
-  const isMobile = useMediaQuery("(max-width:375px)");
+  const isLanguageVisible = useMediaQuery("(max-width:435px)");
   return (
     <Box
       component="footer"
@@ -22,7 +22,7 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         maxWidth="sm"
         sx={{ display: "flex", flexDirection: "column", gap: "1rem" }}
       >
-        {isMobile && <LanguageSwitcher locale={locale} />}
+        {isLanguageVisible && <LanguageSwitcher locale={locale} />}
         <Typography variant="body2" color="primary">
           {"Copyright © "}
           <Link color="primary" href="/">

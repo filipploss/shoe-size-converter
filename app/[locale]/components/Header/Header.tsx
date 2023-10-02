@@ -28,7 +28,9 @@ export default function Header({ locale }: { locale: Locale }) {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const isWideScreen = useMediaQuery("(min-width:375px)");
-  const isMobileScreen = useMediaQuery("(min-width:250px)");
+  const isMobile = useMediaQuery("(max-width:374px)");
+  const isLanguageVisible = useMediaQuery("(min-width:435px)");
+
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -61,42 +63,104 @@ export default function Header({ locale }: { locale: Locale }) {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {isWideScreen ? (
-            <Link
-              color="inherit"
-              href="/"
-              style={{
-                alignItems: "center",
-                color: "inherit",
-                display: "flex",
-                // textDecoration: "none",
-              }}
-            >
-              <SyncAltIcon
-                sx={{
-                  color: "info.main",
-                  display: { xs: "none", md: "flex" },
-                  mr: 1,
-                }}
-              />
-              <Typography
-                variant="h5"
-                noWrap
-                component="p"
+            <>
+              <Link
                 color="primary"
-                sx={{
-                  mr: 2,
-                  display: { xs: "none", md: "flex" },
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  letterSpacing: ".2rem",
-                  textDecoration: "none",
+                href="/"
+                style={{
+                  alignItems: "center",
+                  color: "inherit",
+                  display: "flex",
+                  // textDecoration: "none",
                 }}
               >
-                CONVERTXPERT
-              </Typography>
-            </Link>
+                <SyncAltIcon
+                  sx={{
+                    color: "info.main",
+                    display: "flex",
+                    mr: 1,
+                  }}
+                />
+                <Typography
+                  variant="h5"
+                  noWrap
+                  component="p"
+                  color="primary"
+                  sx={{
+                    mr: 2,
+                    display: "flex",
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".2rem",
+                    textDecoration: "none",
+                  }}
+                >
+                  CONVERTXPERT
+                </Typography>
+              </Link>
+              <Box sx={{ flexGrow: 1, display: "flex" }}>
+                <Button
+                  ref={anchorRef}
+                  id="composition-button"
+                  aria-controls={open ? "composition-menu" : undefined}
+                  aria-expanded={open ? "true" : undefined}
+                  aria-haspopup="true"
+                  onClick={handleToggle}
+                  variant="text"
+                  color="primary"
+                  sx={{
+                    fontSize: 14,
+                    "&:hover": {
+                      background: "#F0F0EF",
+                    },
+                  }}
+                >
+                  {t("catalog")}
+                </Button>
+                <Popper
+                  open={open}
+                  anchorEl={anchorRef.current}
+                  role={undefined}
+                  placement="bottom-start"
+                  transition
+                  disablePortal
+                >
+                  {({ TransitionProps, placement }) => (
+                    <Grow
+                      {...TransitionProps}
+                      style={{
+                        transformOrigin:
+                          placement === "bottom-start"
+                            ? "left top"
+                            : "left bottom",
+                      }}
+                    >
+                      <Paper>
+                        <ClickAwayListener onClickAway={handleClose}>
+                          <MenuList
+                            autoFocusItem={open}
+                            id="composition-menu"
+                            aria-labelledby="composition-button"
+                            onKeyDown={handleListKeyDown}
+                          >
+                            <MenuItem
+                              onClick={() => {
+                                router.push(`/${locale}/shoe-size/converter`);
+                              }}
+                            >
+                              {t("shoeSizeConverter")}
+                            </MenuItem>
+                          </MenuList>
+                        </ClickAwayListener>
+                      </Paper>
+                    </Grow>
+                  )}
+                </Popper>
+              </Box>
+              {isLanguageVisible && <LanguageSwitcher locale={locale} />}
+            </>
           ) : (
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: "flex" }}>
               <IconButton
                 size="large"
                 aria-label="Header menu"
@@ -150,107 +214,110 @@ export default function Header({ locale }: { locale: Locale }) {
               </Popper>
             </Box>
           )}
-          {isMobileScreen ? (
-            <Box sx={{ display: { xs: "flex", md: "none" }, width: "100%" }}>
-              <Link
-                color="primary"
-                href="/"
-                style={{
-                  alignItems: "center",
-                  color: "inherit",
-                  display: "flex",
-                  justifyContent: "center",
-                  // textDecoration: "none",
-                  width: "100%",
-                }}
-              >
-                <SyncAltIcon
-                  sx={{
-                    color: "info.main",
-                    display: { xs: "flex", md: "none" },
-                    mr: 1,
-                  }}
-                />
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="p"
+          {
+            isMobile && (
+              <Box sx={{ display: "flex", width: "100%" }}>
+                <Link
                   color="primary"
-                  sx={{
-                    mr: 2,
-                    display: { xs: "flex", md: "none" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".1rem",
-                    textDecoration: "none",
+                  href="/"
+                  style={{
+                    alignItems: "center",
+                    color: "inherit",
+                    display: "flex",
+                    justifyContent: "center",
+                    // textDecoration: "none",
+                    width: "100%",
                   }}
                 >
-                  CONVERTXPERT
-                </Typography>
-              </Link>
-            </Box>
-          ) : (
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Button
-                ref={anchorRef}
-                id="composition-button"
-                aria-controls={open ? "composition-menu" : undefined}
-                aria-expanded={open ? "true" : undefined}
-                aria-haspopup="true"
-                onClick={handleToggle}
-                variant="text"
-                color="primary"
-                sx={{
-                  fontSize: 14,
-                  "&:hover": {
-                    background: "#F0F0EF",
-                  },
-                }}
-              >
-                {t("catalog")}
-              </Button>
-              <Popper
-                open={open}
-                anchorEl={anchorRef.current}
-                role={undefined}
-                placement="bottom-start"
-                transition
-                disablePortal
-              >
-                {({ TransitionProps, placement }) => (
-                  <Grow
-                    {...TransitionProps}
-                    style={{
-                      transformOrigin:
-                        placement === "bottom-start"
-                          ? "left top"
-                          : "left bottom",
+                  <SyncAltIcon
+                    sx={{
+                      color: "info.main",
+                      display: "flex",
+                      mr: 1,
+                    }}
+                  />
+                  <Typography
+                    variant="h6"
+                    noWrap
+                    component="p"
+                    color="primary"
+                    sx={{
+                      mr: 2,
+                      display: "flex",
+                      fontFamily: "monospace",
+                      fontWeight: 700,
+                      letterSpacing: ".1rem",
+                      textDecoration: "none",
                     }}
                   >
-                    <Paper>
-                      <ClickAwayListener onClickAway={handleClose}>
-                        <MenuList
-                          autoFocusItem={open}
-                          id="composition-menu"
-                          aria-labelledby="composition-button"
-                          onKeyDown={handleListKeyDown}
-                        >
-                          <MenuItem
-                            onClick={() => {
-                              router.push(`/${locale}/shoe-size/converter`);
-                            }}
-                          >
-                            {t("shoeSizeConverter")}
-                          </MenuItem>
-                        </MenuList>
-                      </ClickAwayListener>
-                    </Paper>
-                  </Grow>
-                )}
-              </Popper>
-            </Box>
-          )}
-          {isWideScreen && <LanguageSwitcher locale={locale} />}
+                    CONVERTXPERT
+                  </Typography>
+                </Link>
+              </Box>
+            )
+            // : (
+            // <Box sx={{ flexGrow: 1, display: "flex" }}>
+            //   <Button
+            //     ref={anchorRef}
+            //     id="composition-button"
+            //     aria-controls={open ? "composition-menu" : undefined}
+            //     aria-expanded={open ? "true" : undefined}
+            //     aria-haspopup="true"
+            //     onClick={handleToggle}
+            //     variant="text"
+            //     color="primary"
+            //     sx={{
+            //       fontSize: 14,
+            //       "&:hover": {
+            //         background: "#F0F0EF",
+            //       },
+            //     }}
+            //   >
+            //     {t("catalog")}
+            //   </Button>
+            //   <Popper
+            //     open={open}
+            //     anchorEl={anchorRef.current}
+            //     role={undefined}
+            //     placement="bottom-start"
+            //     transition
+            //     disablePortal
+            //   >
+            //     {({ TransitionProps, placement }) => (
+            //       <Grow
+            //         {...TransitionProps}
+            //         style={{
+            //           transformOrigin:
+            //             placement === "bottom-start"
+            //               ? "left top"
+            //               : "left bottom",
+            //         }}
+            //       >
+            //         <Paper>
+            //           <ClickAwayListener onClickAway={handleClose}>
+            //             <MenuList
+            //               autoFocusItem={open}
+            //               id="composition-menu"
+            //               aria-labelledby="composition-button"
+            //               onKeyDown={handleListKeyDown}
+            //             >
+            //               <MenuItem
+            //                 onClick={() => {
+            //                   router.push(`/${locale}/shoe-size/converter`);
+            //                 }}
+            //               >
+            //                 {t("shoeSizeConverter")}
+            //               </MenuItem>
+            //             </MenuList>
+            //           </ClickAwayListener>
+            //         </Paper>
+            //       </Grow>
+            //     )}
+            //   </Popper>
+            // </Box>
+            // )
+          }
+          {/* {isWideScreen && <LanguageSwitcher locale={locale} />} */}
         </Toolbar>
       </Container>
     </AppBar>
