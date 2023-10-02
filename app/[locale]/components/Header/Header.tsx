@@ -66,7 +66,7 @@ export default function Header({ locale }: { locale: Locale }) {
               alignItems: "center",
               color: "inherit",
               display: "flex",
-              textDecoration: "none",
+              // textDecoration: "none",
             }}
           >
             <SyncAltIcon
@@ -153,7 +153,7 @@ export default function Header({ locale }: { locale: Locale }) {
                 color: "inherit",
                 display: "flex",
                 justifyContent: "center",
-                textDecoration: "none",
+                // textDecoration: "none",
                 width: "100%",
               }}
             >
