@@ -27,7 +27,7 @@ export default function BasicBreadcrumbs({ locale }: { locale: Locale }) {
       return { href, text: t(pathToText(subpath)) };
     });
 
-    return [{ href: "/", text: t("Home") }, ...crumblist];
+    return [{ href: localePath, text: t("Home") }, ...crumblist];
   }, [pathname, locales, localePath, t]);
 
   if (
