@@ -9,7 +9,7 @@ import Crumb from "./components/Crumb";
 export default function BasicBreadcrumbs({ locale }: { locale: Locale }) {
   const t = useTranslations("breadcrumbs");
   const { locales, defaultLocale } = i18n;
-  const localePath = locale === defaultLocale ? "/" : `/${locale}/`;
+  const localePath = locale === defaultLocale ? `/${defaultLocale}/` : `/${locale}/`;
   const pathname = usePathname();
 
   const pathToText = (text: string) => {
