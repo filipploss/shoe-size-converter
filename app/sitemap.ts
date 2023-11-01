@@ -4,15 +4,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://convertxpert.com";
   return [
     {
-      url: `${baseUrl}`,
+      url: `${baseUrl}/en`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/shoe-size`,
+      url: `${baseUrl}/en/shoe-size`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/shoe-size/converter`,
+      url: `${baseUrl}/en/shoe-size/converter`,
       lastModified: new Date(),
     },
     {
