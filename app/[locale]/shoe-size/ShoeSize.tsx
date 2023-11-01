@@ -1,8 +1,8 @@
+import { Locale } from "@/i18n.config";
 import { Box, List, ListItem, Typography } from "@mui/material/";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FC } from "react";
-import { useTranslations } from "next-intl";
-import { Locale, i18n } from "@/i18n.config";
 
 interface IProps {
   locale: Locale;
@@ -10,7 +10,7 @@ interface IProps {
 
 const ShoeSize: FC<IProps> = ({ locale }) => {
   const t = useTranslations("shoeSize");
-  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
+  const localePath = `/${locale}/`;
 
   const text = t.rich("text", {
     h1: (chunks) => (

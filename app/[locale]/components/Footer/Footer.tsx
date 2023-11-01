@@ -25,7 +25,7 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         {isLanguageVisible && <LanguageSwitcher locale={locale} />}
         <Typography variant="body2" color="primary">
           {"Copyright © "}
-          <Link color="primary" href="/">
+          <Link color="primary" href={`/${locale}`}>
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}

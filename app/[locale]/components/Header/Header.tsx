@@ -30,6 +30,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const isWideScreen = useMediaQuery("(min-width:375px)");
   const isMobile = useMediaQuery("(max-width:374px)");
   const isLanguageVisible = useMediaQuery("(min-width:435px)");
+  const localePath = `/${locale}/`;
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -66,7 +67,7 @@ export default function Header({ locale }: { locale: Locale }) {
             <>
               <Link
                 color="primary"
-                href="/"
+                href={localePath}
                 style={{
                   alignItems: "center",
                   color: "inherit",
@@ -219,7 +220,7 @@ export default function Header({ locale }: { locale: Locale }) {
               <Box sx={{ display: "flex", width: "100%" }}>
                 <Link
                   color="primary"
-                  href="/"
+                  href={localePath}
                   style={{
                     alignItems: "center",
                     color: "inherit",
