@@ -1,6 +1,6 @@
 "use client";
 
-import { Locale } from "@/i18n.config";
+import { Locale, i18n } from "@/i18n.config";
 import MenuIcon from "@mui/icons-material/Menu";
 import SyncAltIcon from "@mui/icons-material/SyncAlt";
 import AppBar from "@mui/material/AppBar";
@@ -30,7 +30,7 @@ export default function Header({ locale }: { locale: Locale }) {
   const isWideScreen = useMediaQuery("(min-width:375px)");
   const isMobile = useMediaQuery("(max-width:374px)");
   const isLanguageVisible = useMediaQuery("(min-width:435px)");
-  const localePath = `/${locale}/`;
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -72,7 +72,6 @@ export default function Header({ locale }: { locale: Locale }) {
                   alignItems: "center",
                   color: "inherit",
                   display: "flex",
-                  // textDecoration: "none",
                 }}
               >
                 <SyncAltIcon
@@ -225,7 +224,6 @@ export default function Header({ locale }: { locale: Locale }) {
                   color: "inherit",
                   display: "flex",
                   justifyContent: "center",
-                  // textDecoration: "none",
                   width: "100%",
                 }}
               >

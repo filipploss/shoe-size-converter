@@ -1,5 +1,5 @@
 "use client";
-import { Locale } from "@/i18n.config";
+import { Locale, i18n } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
@@ -9,6 +9,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function StickyFooter({ locale }: { locale: Locale }) {
   const isLanguageVisible = useMediaQuery("(max-width:435px)");
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
   return (
     <Box
       component="footer"
@@ -25,7 +26,7 @@ export default function StickyFooter({ locale }: { locale: Locale }) {
         {isLanguageVisible && <LanguageSwitcher locale={locale} />}
         <Typography variant="body2" color="primary">
           {"Copyright © "}
-          <Link color="primary" href={`/${locale}`}>
+          <Link color="primary" href={localePath}>
             ConvertXpert.com
           </Link>{" "}
           {new Date().getFullYear()}
