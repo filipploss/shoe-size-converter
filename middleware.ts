@@ -3,7 +3,7 @@ import createMiddleware from "next-intl/middleware";
 import { i18n } from "i18n.config";
 const { locales, defaultLocale } = i18n;
 
-export default createMiddleware({
+export default createMiddleware({ 
   locales,
   defaultLocale,
   pathnames: {
