@@ -9,7 +9,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 
 export default function StickyFooter({ locale }: { locale: Locale }) {
   const isLanguageVisible = useMediaQuery("(max-width:435px)");
-  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}`;
   return (
     <Box
       component="footer"
