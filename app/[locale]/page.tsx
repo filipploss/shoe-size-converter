@@ -1,4 +1,4 @@
-import { Locale } from "@/i18n.config";
+import { Locale, i18n } from "@/i18n.config";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Metadata } from "next";
@@ -26,7 +26,7 @@ export default function Home({
   params: { locale: Locale };
 }) {
   const t = useTranslations("home");
-  const localePath = `/${locale}/`;
+  const localePath = locale === i18n.defaultLocale ? "/" : `/${locale}/`;
 
   // TODO: move this component definition out of the parent component
   const text = t.rich("text", {

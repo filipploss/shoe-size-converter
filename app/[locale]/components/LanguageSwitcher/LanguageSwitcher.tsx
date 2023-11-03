@@ -8,7 +8,7 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
   const { locales } = i18n;
 
   const redirectedPathName = (locale: Locale) => {
-    if (!pathName) return `/${locale}`;
+    if (!pathName) return "/";
     const segments = pathName.split("/");
 
     locales.includes(segments[1] as Locale)
