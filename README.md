@@ -1,3 +1,5 @@
+## About The Project
+
 This is an application for converting shoe sizes. It is planned to add other converters in the future. </br>
 It is built with [Next.js 13](https://nextjs.org/), [TypeScript](https://www.typescriptlang.org/), internationalization using [Next-intl](https://next-intl-docs.vercel.app/) and [MUI](https://mui.com/material-ui/)  
 
